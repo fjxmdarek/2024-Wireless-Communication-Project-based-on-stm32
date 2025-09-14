@@ -1,0 +1,538 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V8.10.2.1069/W32 for MSP430         03/Aug/2023  15:45:51
+// Copyright 1996-2022 IAR Systems AB.
+// Evaluation license - IAR Embedded Workbench for MSP430, Evaluation version 8.10
+//
+//    __rt_version  =  3
+//    __double_size =  32
+//    __reg_r4      =  free
+//    __reg_r5      =  free
+//    __pic         =  no
+//    __core        =  430X
+//    __data_model  =  large
+//    __code_model  =  large
+//    Source file   =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\ad9850.c
+//    Command line  =  
+//        -f
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver\ad9850.r43.rsp
+//        (C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\ad9850.c
+//        -D DEBUG -D RAM_VECTOR -lA
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\StdPeriph_Driver
+//        -o
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver
+//        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        -D__MSP430F5529__ -e --double=32 --dlib_config "C:\Program Files\IAR
+//        Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xllff.h" -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\ -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_config\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\srcUSB\USB_API\USB_CDC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_HID_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_MSC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\delay\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\18b20\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\KEY\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LED\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\12864\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\oled\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LQ_1.8_TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LCD_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\2.2TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nrf24l01\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\USER\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\option\
+//        --core=430X --data_model=large -On --multiplier=32
+//        --hw_workaround=CPU40 --hw_workaround=nop_after_lpm
+//        --code_model=large) --dependencies=n
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver\ad9850.r43.iar_deps
+//    Locale        =  Chinese (Simplified)_CHN.936
+//    List file     =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\StdPeriph_Driver\ad9850.s43
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ad9850
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__code_model", "large"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN _Div32f
+        EXTERN _Mul32f
+        EXTERN _Cast32fto32s
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC AD9850_Delay
+        PUBLIC AD9850_Init
+        PUBLIC AD9850_Write
+        PUBWEAK _A_PAOUT_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+// C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\ad9850.c
+//    1 #include "msp430f5529_gpio.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0202H
+// union <unnamed> __data16 _A_PAOUT_L
+_A_PAOUT_L:
+        DS8 2
+//    2 #include "ad9850.h"
+//    3 typedef unsigned int u16;
+//    4 typedef unsigned char u8;
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//    5 void AD9850_Init(void)
+AD9850_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function AD9850_Init
+//    6 {
+//    7 	AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//    8 	AD9850_FQUD_L;
+        BIC.B   #0x10, &0x203
+//    9 
+//   10 	AD9850_RESET_L;
+        BIC.B   #0x4, &0x203
+//   11 	AD9850_RESET_H;
+        BIS.B   #0x4, &0x203
+//   12 	AD9850_Delay(0xffff);		
+        MOV.W   #0xffff, R12
+          CFI FunCall AD9850_Delay
+        CALLA   #AD9850_Delay
+//   13 	AD9850_RESET_L;
+        BIC.B   #0x4, &0x203
+//   14 
+//   15 	AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   16 	AD9850_WCLK_H;
+        BIS.B   #0x20, &0x203
+//   17 	AD9850_Delay(0xffff);		
+        MOV.W   #0xffff, R12
+          CFI FunCall AD9850_Delay
+        CALLA   #AD9850_Delay
+//   18 	AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   19 
+//   20 	AD9850_FQUD_L;
+        BIC.B   #0x10, &0x203
+//   21 	AD9850_FQUD_H;
+        BIS.B   #0x10, &0x203
+//   22 	AD9850_Delay(0xffff);		
+        MOV.W   #0xffff, R12
+          CFI FunCall AD9850_Delay
+        CALLA   #AD9850_Delay
+//   23 	AD9850_FQUD_L;
+        BIC.B   #0x10, &0x203
+//   24 }
+        RETA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_PAOUT_L
+//   25 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   26 void AD9850_Write(u8 w0,double frequence)
+AD9850_Write:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function AD9850_Write
+//   27 {
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R4
+//   28 	unsigned char i;
+//   29 	long int y;
+//   30 	double x;
+//   31 	u8 wdata;
+//   32 	x=4294967295U/125;//适合125M晶振
+        MOV.W   #0x126e, R8
+        MOV.W   #0x4c03, R9
+//   33 	//如果时钟频率不为180MHZ，修改该处的频率值，单位MHz  ！！！
+//   34 	frequence=frequence/1000000;
+        MOV.W   R14, R12
+        MOV.W   R15, R13
+        MOV.W   #0x2400, R14
+        MOV.W   #0x4974, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+//   35 	frequence=frequence*x;
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+//   36 	y=frequence;
+        MOV.W   R14, R12
+        MOV.W   R15, R13
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//   37 	//写w4数据
+//   38 	wdata=(y>>=0);
+        MOV.B   R10, R6
+//   39 	for(i=0;i<8;i++)
+        MOV.B   #0x0, R7
+??AD9850_Write_0:
+        CMP.B   #0x8, R7
+        JC      ??AD9850_Write_10
+//   40 	{
+//   41 		if(wdata&0x01)
+        BIT.B   #0x1, R6
+        JNC     ??AD9850_Write_11
+//   42 			AD9850_DATA_H;
+        BIS.B   #0x8, &0x203
+        JMP     ??AD9850_Write_5
+//   43 		else
+//   44 			AD9850_DATA_L;
+??AD9850_Write_11:
+        BIC.B   #0x8, &0x203
+//   45 		AD9850_WCLK_H;
+??AD9850_Write_5:
+        BIS.B   #0x20, &0x203
+//   46 		wdata=wdata>>1;
+        RRUX.B  R6
+//   47 		AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   48 	}
+        ADD.B   #0x1, R7
+        JMP     ??AD9850_Write_0
+//   49 	wdata=(y>>8);
+??AD9850_Write_10:
+        MOV.W   R10, R13
+        SWPB    R13
+        SXT     R13
+        MOV.B   R13, R6
+//   50 	for(i=0;i<8;i++)
+        MOV.B   #0x0, R7
+??AD9850_Write_1:
+        CMP.B   #0x8, R7
+        JC      ??AD9850_Write_12
+//   51 	{
+//   52 		if(wdata&0x01)
+        BIT.B   #0x1, R6
+        JNC     ??AD9850_Write_13
+//   53 			AD9850_DATA_H;
+        BIS.B   #0x8, &0x203
+        JMP     ??AD9850_Write_6
+//   54 		else
+//   55 			AD9850_DATA_L;
+??AD9850_Write_13:
+        BIC.B   #0x8, &0x203
+//   56 		AD9850_WCLK_H;
+??AD9850_Write_6:
+        BIS.B   #0x20, &0x203
+//   57 		wdata=wdata>>1;
+        RRUX.B  R6
+//   58 		AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   59 	}
+        ADD.B   #0x1, R7
+        JMP     ??AD9850_Write_1
+//   60 	wdata=y>>16;
+??AD9850_Write_12:
+        MOV.B   R11, R6
+//   61 	for(i=0;i<8;i++)
+        MOV.B   #0x0, R7
+??AD9850_Write_2:
+        CMP.B   #0x8, R7
+        JC      ??AD9850_Write_14
+//   62 	{
+//   63 		if(wdata&0x01)
+        BIT.B   #0x1, R6
+        JNC     ??AD9850_Write_15
+//   64 			AD9850_DATA_H;
+        BIS.B   #0x8, &0x203
+        JMP     ??AD9850_Write_7
+//   65 		else
+//   66 			AD9850_DATA_L;
+??AD9850_Write_15:
+        BIC.B   #0x8, &0x203
+//   67 		AD9850_WCLK_H;
+??AD9850_Write_7:
+        BIS.B   #0x20, &0x203
+//   68 		wdata=wdata>>1;
+        RRUX.B  R6
+//   69 		AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   70 	}
+        ADD.B   #0x1, R7
+        JMP     ??AD9850_Write_2
+//   71 	wdata=y>>24;
+??AD9850_Write_14:
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        SWPB    R13
+        SXT     R13
+        MOV.W   R13, R12
+        SWPB    R13
+        SXT     R13
+        MOV.B   R12, R6
+//   72 	for(i=0;i<8;i++)
+        MOV.B   #0x0, R7
+??AD9850_Write_3:
+        CMP.B   #0x8, R7
+        JC      ??AD9850_Write_16
+//   73 	{
+//   74 		if(wdata&0x01)
+        BIT.B   #0x1, R6
+        JNC     ??AD9850_Write_17
+//   75 			AD9850_DATA_H;
+        BIS.B   #0x8, &0x203
+        JMP     ??AD9850_Write_8
+//   76 		else
+//   77 			AD9850_DATA_L;
+??AD9850_Write_17:
+        BIC.B   #0x8, &0x203
+//   78 		AD9850_WCLK_H;
+??AD9850_Write_8:
+        BIS.B   #0x20, &0x203
+//   79 		wdata=wdata>>1;
+        RRUX.B  R6
+//   80 		AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   81 	}
+        ADD.B   #0x1, R7
+        JMP     ??AD9850_Write_3
+//   82 	wdata=w0;
+??AD9850_Write_16:
+        MOV.B   R4, R6
+//   83 	for(i=0;i<8;i++)
+        MOV.B   #0x0, R7
+??AD9850_Write_4:
+        CMP.B   #0x8, R7
+        JC      ??AD9850_Write_18
+//   84 	{
+//   85 		if(wdata&0x01)
+        BIT.B   #0x1, R6
+        JNC     ??AD9850_Write_19
+//   86 			AD9850_DATA_H;
+        BIS.B   #0x8, &0x203
+        JMP     ??AD9850_Write_9
+//   87 		else
+//   88 			AD9850_DATA_L;
+??AD9850_Write_19:
+        BIC.B   #0x8, &0x203
+//   89 		AD9850_WCLK_H;
+??AD9850_Write_9:
+        BIS.B   #0x20, &0x203
+//   90 		wdata=wdata>>1;
+        RRUX.B  R6
+//   91 		AD9850_WCLK_L;
+        BIC.B   #0x20, &0x203
+//   92 	}
+        ADD.B   #0x1, R7
+        JMP     ??AD9850_Write_4
+//   93 	AD9850_FQUD_H;
+??AD9850_Write_18:
+        BIS.B   #0x10, &0x203
+//   94 //	AD9850_Delay(0xffff);		
+//   95 	AD9850_FQUD_L;
+        BIC.B   #0x10, &0x203
+//   96 
+//   97 }
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_PAOUT_L
+//   98 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   99 void AD9850_Delay(unsigned int z) 
+AD9850_Delay:
+??AD9850_Delay_0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function AD9850_Delay
+          CFI NoCalls
+//  100 {  
+//  101     
+//  102 	for(;z>0;z--) 
+        CMP.W   #0x0, R12
+        JEQ     ??AD9850_Delay_1
+        ADD.W   #0xffff, R12
+        JMP     ??AD9850_Delay_0
+//  103     
+//  104 	{;} 
+//  105 }
+??AD9850_Delay_1:
+        RETA
+          CFI EndBlock cfiBlock2
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  106 
+// 
+// 392 bytes in segment CODE
+//   2 bytes in segment DATA16_AN
+// 
+// 392 bytes of CODE memory
+//   0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: 3

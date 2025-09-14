@@ -1,0 +1,3435 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V7.10.1.973/W32 for MSP430          07/Aug/2021  09:28:39
+// Copyright 1996-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for Texas Instruments MSP430
+//
+//    __rt_version  =  3
+//    __double_size =  32
+//    __reg_r4      =  free
+//    __reg_r5      =  free
+//    __pic         =  no
+//    __core        =  430X
+//    __data_model  =  large
+//    __code_model  =  large
+//    Source file   =  C:\Users\79033\Desktop\test\msp430f5529\User\main.c
+//    Command line  =  
+//        -f C:\Users\79033\AppData\Local\Temp\EW7437.tmp
+//        (C:\Users\79033\Desktop\test\msp430f5529\User\main.c -D DEBUG -D
+//        RAM_VECTOR -lA C:\Users\79033\Desktop\test\msp430f5529\Debug\List -o
+//        C:\Users\79033\Desktop\test\msp430f5529\Debug\Obj --no_cse
+//        --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        -D__MSP430F5529__ -e --double=32 --dlib_config "C:\Program Files
+//        (x86)\IAR Systems\Embedded Workbench 8.0\430\lib\dlib\dl430xllff.h"
+//        -I C:\Users\79033\Desktop\test\msp430f5529\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_config\
+//        -I C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_User\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\srcUSB\USB_API\USB_CDC_API\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_API\USB_HID_API\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_API\USB_MSC_API\
+//        -I C:\Users\79033\Desktop\test\msp430f5529\HardWare\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\delay\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\18b20\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\KEY\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LED\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\12864\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\oled\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\mpu6050\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\mpu6050\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nokia5110\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nokia5110\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LQ_1.8_TFT\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LCD_API\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\2.2TFT\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nrf24l01\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\User\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\User\USER\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Lib\FatFs\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Lib\FatFs\option\ --core=430X
+//        --data_model=large -On --multiplier=32 --hw_workaround=CPU40
+//        --hw_workaround=nop_after_lpm --code_model=large)
+//    Locale        =  Chinese (Simplified)_CHN.936
+//    List file     =  
+//        C:\Users\79033\Desktop\test\msp430f5529\Debug\List\main.s43
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__code_model", "large"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN _Mul32f
+        EXTERN _Div32f
+        EXTERN _Add32f
+        EXTERN _Cast32fto32s
+        EXTERN _Sub32f
+        EXTERN ?DivMod32u
+        EXTERN _Cast32uto32f
+        EXTERN _Cast32sto32f
+        EXTERN __iar_HWMUL
+        EXTERN ?DivMod32s
+        EXTERN ?DivMod16s
+        EXTERN ?FLT_LT
+        EXTERN ?cstart_init_copy20
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC Angle
+        PUBLIC Angle_Set
+        PUBLIC Encoder_Left
+        PUBLIC Encoder_right
+        PUBLIC Get_battery_volt
+        PUBLIC Incremental_PI_A
+        PUBLIC Incremental_PI_B
+        PUBLIC Kinematic_Analysis
+        PUBLIC Motor_A
+        PUBLIC Motor_B
+        PUBLIC PulseAngle_l
+        PUBLIC PulseAngle_r
+        PUBLIC PulseWidth_l
+        PUBLIC PulseWidth_o
+        PUBLIC PulseWidth_r
+        PUBLIC RUND_FLAG
+        PUBLIC Read_Encoder
+        PUBLIC SBUS
+        PUBLIC SBUS_FLAG
+        PUBLIC SBUS_Handle
+        PUBLIC SBUS_RXBuffer
+        PUBLIC SBUS_RX_Finish
+        PUBLIC Servo
+        PUBLIC Set_Pwm
+        PUBLIC TIMER_A1_IRQ_Handler
+        PUBLIC TIMER_A2_IRQ_Handler
+        PUBLIC TIMER_TA0_A0_IRQ_Handler
+        PUBLIC Target_A
+        PUBLIC Target_B
+        PUBLIC UART0_RX_IRQ_Handler
+        PUBLIC UART_RX_IRQ_Handler
+        PUBLIC Velocity
+        PUBLIC Velocity_KI
+        PUBLIC Velocity_KP
+        PUBLIC Velocity_Set
+        PUBLIC Voltage_Temp
+        PUBLIC databuf
+        PUBLIC key_init
+        PUBLIC main
+        PUBLIC mode
+        PUBLIC motor_PWM_init
+        PUBLIC motor_angle_init
+        PUBLIC overflowTime_l
+        PUBLIC overflowTime_o
+        PUBLIC overflowTime_r
+        PUBLIC speed_L
+        PUBLIC speed_R
+        PUBLIC vounetr_chack
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC or(load(2, DATA, add(CFA, literal(-2))), lshift(and(load(2, DATA, add(CFA, literal(-4))), 61440), 4))
+          CFI SR Frame(CFA, -4)
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon1
+        
+        
+          CFI Common cfiCommon2 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L Undefined
+          CFI R4H Undefined
+          CFI R4 Undefined
+          CFI R5L Undefined
+          CFI R5H Undefined
+          CFI R5 Undefined
+          CFI R6L Undefined
+          CFI R6H Undefined
+          CFI R6 Undefined
+          CFI R7L Undefined
+          CFI R7H Undefined
+          CFI R7 Undefined
+          CFI R8L Undefined
+          CFI R8H Undefined
+          CFI R8 Undefined
+          CFI R9L Undefined
+          CFI R9H Undefined
+          CFI R9 Undefined
+          CFI R10L Undefined
+          CFI R10H Undefined
+          CFI R10 Undefined
+          CFI R11L Undefined
+          CFI R11H Undefined
+          CFI R11 Undefined
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon2
+        
+        EXTERN UART_GetITStatus
+        EXTERN UART_GetChar
+        EXTERN UART_ClearITPendingBit
+        EXTERN TIMER_GetITStatus
+        EXTERN TIMER_GetChannelPinInValue
+        EXTERN TIMER_Capture_GetValue
+        EXTERN TIMER_Capture_CalTime_Us
+        EXTERN TIMER_ClearITPendingBit
+        EXTERN GPIO_GetITStatus
+        EXTERN GPIO_TurnBit
+        EXTERN GPIO_ClearITPendingBit
+        EXTERN GPIO_ReadBit
+        EXTERN GPIO_MultiBits_Init
+        EXTERN GPIO_WriteBit
+        EXTERN TIMER_PWM_MultiChannel_Init
+        EXTERN TIMER_PWM_SetChannelDuty
+        EXTERN tan
+        EXTERN ADC_ReadChanelOnce
+        EXTERN UART_ITConfig
+        EXTERN UART_Printf
+        EXTERN LED_Init
+        EXTERN OLED_Init
+        EXTERN KEY_Init
+        EXTERN UART_Init
+        EXTERN Set_Vector_Handler
+        EXTERN UART0_Init
+        EXTERN TIMER_Capture_Init
+        EXTERN TIMER_ITConfig
+        EXTERN GPIO_ITConfig
+        EXTERN TIMER_Interval_Us
+        EXTERN ADC_Init
+        EXTERN LED_Turn
+        EXTERN KEY_isPressed
+        EXTERN OLED_PrintfAt
+
+// C:\Users\79033\Desktop\test\msp430f5529\User\main.c
+//    1 /*        
+//    2 头文件声明        
+//    3 */
+//    4 #include "msp430f5529_system.h"
+//    5 #include "msp430f5529_clock.h"
+//    6 #include "msp430f5529_watchdog.h"
+//    7 #include "msp430f5529_gpio.h"
+//    8 #include "msp430f5529_timer.h"
+//    9 #include "msp430f5529_adc.h"
+//   10 #include "msp430f5529_uart.h"
+//   11 #include "msp430f5529_i2c.h"
+//   12 #include "msp430f5529_spi.h"
+//   13 #include "msp430f5529_flash.h"
+//   14 #include "msp430f5529_rtc.h"
+//   15 #include "msp430f5529_dma.h"
+//   16 #include "msp430f5529_compater.h"
+//   17 #include "msp430f5529_lpm.h"
+//   18 #include "msp430f5529_nmi.h"
+//   19 #include "msp430f5529_remap.h"
+//   20 #include "msp430f5529_it.h"
+//   21 #include "msp430f5529_vectors.h"
+//   22 #include "KEY.h"
+//   23 #include "LED.h"
+//   24 #include "LCD_API.h"
+//   25 #include "OLED.h"
+//   26 #include "math.h"
+//   27 #include "PID.h"
+//   28 
+//   29 
+//   30 /*
+//   31 定义变量
+//   32 */
+//   33 #define MOTOR_L GPIO_ReadBit(P1,4)
+//   34 #define MOTOR_R GPIO_ReadBit(P1,5)
+//   35 #define Key1 GPIO_ReadBit(P1,4)
+//   36 #define Key2 GPIO_ReadBit(P1,5)
+//   37 #define T 2.5
+//   38 #define L 1
+//   39 #define K 8.88
+//   40 #define SERVO_INIT 600
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   41 uint8_t mode=0;
+mode:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   42 uint8_t SBUS_RX_Finish=0;
+SBUS_RX_Finish:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   43 uint8_t SBUS_FLAG=0;
+SBUS_FLAG:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   44 uint8_t RUND_FLAG=0;
+RUND_FLAG:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   45 int Voltage_Temp;
+Voltage_Temp:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   46 int Encoder_right,Encoder_Left;             //左右编码器的脉冲计数
+Encoder_right:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Encoder_Left:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   47 float Velocity=0,Velocity_Set,Angle,Angle_Set;
+Velocity:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Velocity_Set:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Angle:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Angle_Set:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   48 int Motor_A,Motor_B,Servo,Target_A,Target_B;  //电机舵机控制相关           
+Motor_A:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Motor_B:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Servo:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Target_A:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+Target_B:
+        DS8 2
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+//   49 float Velocity_KP=0.6,Velocity_KI=0.02;	       //速度控制PID参数
+Velocity_KP:
+        DS8 4
+        REQUIRE `?<Initializer for Velocity_KP>`
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+Velocity_KI:
+        DS8 4
+        REQUIRE `?<Initializer for Velocity_KI>`
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   50 volatile uint32_t PulseWidth_l=0,PulseWidth_r=0,PulseWidth_o=0;
+PulseWidth_l:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+PulseWidth_r:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+PulseWidth_o:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   51 volatile int32_t speed_R=0,speed_L=0;
+speed_R:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+speed_L:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   52 volatile uint8_t PulseAngle_l=0,PulseAngle_r=0;
+PulseAngle_l:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+PulseAngle_r:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   53 volatile uint16_t overflowTime_r=0,overflowTime_l=0,overflowTime_o=0;
+overflowTime_r:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+overflowTime_l:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+overflowTime_o:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   54 char databuf[256];
+databuf:
+        DS8 256
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   55 char SBUS_RXBuffer[256];
+SBUS_RXBuffer:
+        DS8 256
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   56 static int num=0;
+num:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   57 static int num1=0;
+num1:
+        DS8 2
+//   58 typedef struct{
+//   59 	uint8_t Start;
+//   60 	uint16_t Ch1;
+//   61 	uint16_t Ch2;
+//   62 	uint16_t Ch3;
+//   63 	uint16_t Ch4;
+//   64 	uint16_t Ch5;
+//   65 	uint16_t Ch6;
+//   66 	uint16_t Ch7;
+//   67 	uint16_t Ch8;
+//   68 	uint16_t Ch9;
+//   69 	uint16_t Ch10;
+//   70 	uint16_t Ch11;
+//   71 	uint16_t Ch12;
+//   72 	uint16_t Ch13;
+//   73 	uint16_t Ch14;
+//   74 	uint16_t Ch15;
+//   75 	uint16_t Ch16;
+//   76 	uint8_t Flag;
+//   77 	uint8_t End;
+//   78 }SBUS_Buffer;
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   79 SBUS_Buffer SBUS;
+SBUS:
+        DS8 36
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT UART_RX_IRQ_Handler, "interrupt"
+//   80 __interrupt void UART_RX_IRQ_Handler()
+UART_RX_IRQ_Handler:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function UART_RX_IRQ_Handler
+//   81 { 
+        PUSHM.A #0x4, R15
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+20
+//   82   
+//   83   if(UART_GetITStatus(UART1,UART_RX_IRQn) == TRUE)   //清除串口某一个中断标志
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_GetITStatus
+        CALLA   #UART_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??UART_RX_IRQ_Handler_0
+//   84   {
+//   85     //传输速率高时，接收中断里不要做其他事件，否则会丢失数据，另外主时钟也要设高一点
+//   86     databuf[num1]=UART_GetChar     (UART1);                 //读取一个字节1个字节
+        MOV.B   #0x1, R12
+          CFI FunCall UART_GetChar
+        CALLA   #UART_GetChar
+        MOVX.W  &num1, R15
+        MOVX.B  R12, databuf(R15)
+//   87     num1++;
+        ADDX.W  #0x1, &num1
+//   88     UART_ClearITPendingBit(UART1,UART_RX_IRQn);    //清除串口某一个中断标志
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_ClearITPendingBit
+        CALLA   #UART_ClearITPendingBit
+//   89   }
+//   90 }
+??UART_RX_IRQ_Handler_0:
+        POPM.A  #0x4, R15
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock0
+//   91 /*
+//   92 __interrupt void GPIO_IRQ_Handler()
+//   93 {
+//   94  if(GPIO_GetITStatus(P1,4)==TRUE)
+//   95  {
+//   96    GPIO_TurnBit (P1,0);             //翻转输出状态
+//   97    GPIO_ClearITPendingBit(P1,4);                //清除位中断标志
+//   98  }
+//   99  if(GPIO_GetITStatus(P1,5)==TRUE)
+//  100  {
+//  101    GPIO_TurnBit (P4,7);             //翻转输出状态
+//  102    GPIO_ClearITPendingBit(P1,5);                //清除位中断标志
+//  103  }
+//  104 }*/
+//  105 //定时器A1中断服务程序，读取超声波检测到的距离 
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT TIMER_A1_IRQ_Handler, "interrupt"
+//  106 __interrupt void TIMER_A1_IRQ_Handler()
+TIMER_A1_IRQ_Handler:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function TIMER_A1_IRQ_Handler
+//  107 {       int32_t PulseWidth_o_1;
+        PUSHM.A #0x6, R15
+          CFI R10L Frame(CFA, -28)
+          CFI R10H Frame(CFA, -26)
+          CFI R11L Frame(CFA, -24)
+          CFI R11H Frame(CFA, -22)
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+28
+//  108        static uint16_t start_value_o = 0,stop_value_o = 0;
+//  109        if(TIMER_GetITStatus(TIMER_A1,TIMER_CCR1_IRQn) == TRUE)  //获取某一通道中断标志
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_GetITStatus
+        CALLA   #TIMER_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A1_IRQ_Handler_1
+//  110    {
+//  111      //如果捕获到上升沿
+//  112      if( TIMER_GetChannelPinInValue(TIMER_A1,TIMER_CH1) == BIT_SET)
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_GetChannelPinInValue
+        CALLA   #TIMER_GetChannelPinInValue
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A1_IRQ_Handler_2
+//  113      {
+//  114        start_value_o = TIMER_Capture_GetValue  (TIMER_A1,TIMER_CH1);                    //读取发生该捕获条件时的计数值
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??start_value_o
+//  115        overflowTime_o = 0;
+        MOVX.W  #0x0, &overflowTime_o
+        JMP     ??TIMER_A1_IRQ_Handler_0
+//  116      }
+//  117      //如果捕获到下降沿
+//  118      else 
+//  119      {
+//  120        stop_value_o = TIMER_Capture_GetValue  (TIMER_A1,TIMER_CH1);                    //读取发生该捕获条件时的计数值
+??TIMER_A1_IRQ_Handler_2:
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??stop_value_o
+//  121 
+//  122        PulseWidth_o_1 =TIMER_Capture_CalTime_Us(start_value_o,stop_value_o,overflowTime_o);//读取捕获时间并转化为距离
+        MOVX.W  &overflowTime_o, R14
+        MOVX.W  &??stop_value_o, R13
+        MOVX.W  &??start_value_o, R12
+          CFI FunCall TIMER_Capture_CalTime_Us
+        CALLA   #TIMER_Capture_CalTime_Us
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  123      if(PulseWidth_o_1>50&&PulseWidth_o_1<10000)PulseWidth_o=PulseWidth_o_1;
+        CMP.W   #0x0, R11
+        JL      ??TIMER_A1_IRQ_Handler_0
+        JNE     ??TIMER_A1_IRQ_Handler_3
+        CMP.W   #0x33, R10
+        JNC     ??TIMER_A1_IRQ_Handler_0
+??TIMER_A1_IRQ_Handler_3:
+        CMP.W   #0x0, R11
+        JL      ??TIMER_A1_IRQ_Handler_4
+        JNE     ??TIMER_A1_IRQ_Handler_0
+        CMP.W   #0x2710, R10
+        JC      ??TIMER_A1_IRQ_Handler_0
+??TIMER_A1_IRQ_Handler_4:
+        MOVX.W  R10, &PulseWidth_o
+        MOVX.W  R11, &PulseWidth_o + 2
+//  124      }
+//  125      TIMER_ClearITPendingBit(TIMER_A1,TIMER_CCR1_IRQn);     //清除TIMER的某一个中断标志
+??TIMER_A1_IRQ_Handler_0:
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_ClearITPendingBit
+        CALLA   #TIMER_ClearITPendingBit
+//  126     
+//  127    }
+//  128       
+//  129    if(TIMER_GetITStatus(TIMER_A1,TIMER_OverFlow_IRQn) == TRUE)//如果溢出
+??TIMER_A1_IRQ_Handler_1:
+        MOV.B   #0x7, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_GetITStatus
+        CALLA   #TIMER_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A1_IRQ_Handler_5
+//  130    {
+//  131      //overflowTime_r++;          //溢出值加1
+//  132      //overflowTime_l++; 
+//  133      overflowTime_o++; 
+        ADDX.W  #0x1, &overflowTime_o
+//  134      TIMER_ClearITPendingBit(TIMER_A1,TIMER_OverFlow_IRQn);     //清除TIMER的某一个中断标志
+        MOV.B   #0x7, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_ClearITPendingBit
+        CALLA   #TIMER_ClearITPendingBit
+//  135    }
+//  136 }
+??TIMER_A1_IRQ_Handler_5:
+        POPM.A  #0x6, R15
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??start_value_o:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??stop_value_o:
+        DS8 2
+//  137   
+//  138 //定时器A1中断服务程序，读取超声波检测到的距离 
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT TIMER_A2_IRQ_Handler, "interrupt"
+//  139 __interrupt void TIMER_A2_IRQ_Handler()
+TIMER_A2_IRQ_Handler:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function TIMER_A2_IRQ_Handler
+//  140 {
+        PUSHM.A #0x8, R15
+          CFI R8L Frame(CFA, -36)
+          CFI R8H Frame(CFA, -34)
+          CFI R9L Frame(CFA, -32)
+          CFI R9H Frame(CFA, -30)
+          CFI R10L Frame(CFA, -28)
+          CFI R10H Frame(CFA, -26)
+          CFI R11L Frame(CFA, -24)
+          CFI R11H Frame(CFA, -22)
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+36
+//  141   uint32_t PulseWidth_l_1=0,PulseWidth_l_r=0;
+        MOV.W   #0x0, R8
+        MOV.W   #0x0, R9
+        MOV.W   #0x0, R10
+        MOV.W   #0x0, R11
+//  142   static uint16_t start_value_l = 0,stop_value_l = 0,start_value_r = 0,stop_value_r = 0;
+//  143    //LED_Turn(LED1);               //指示灯闪烁
+//  144 
+//  145     /* if(GPIO_GetITStatus(P1,4)==TRUE)
+//  146    {
+//  147      GPIO_TurnBit (P1,0);             //翻转输出状态
+//  148      GPIO_ClearITPendingBit(P1,4);                //清除位中断标志
+//  149    }*/
+//  150    if(GPIO_GetITStatus(P1,5)==TRUE)
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_GetITStatus
+        CALLA   #GPIO_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_5
+//  151    {
+//  152      GPIO_TurnBit (P4,7);             //翻转输出状态
+        MOV.B   #0x7, R13
+        MOV.B   #0x3, R12
+          CFI FunCall GPIO_TurnBit
+        CALLA   #GPIO_TurnBit
+//  153      GPIO_ClearITPendingBit(P1,5);                //清除位中断标志
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ClearITPendingBit
+        CALLA   #GPIO_ClearITPendingBit
+//  154    }
+//  155    if((TIMER_GetITStatus(TIMER_A2,TIMER_CCR1_IRQn) == TRUE)||(GPIO_GetITStatus(P1,4)==TRUE))  //获取某一通道中断标志
+??TIMER_A2_IRQ_Handler_5:
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetITStatus
+        CALLA   #TIMER_GetITStatus
+        CMP.B   #0x1, R12
+        JEQ     ??TIMER_A2_IRQ_Handler_6
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_GetITStatus
+        CALLA   #GPIO_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_7
+//  156    {
+//  157      //如果捕获到上升沿
+//  158      if( TIMER_GetChannelPinInValue(TIMER_A2,TIMER_CH1) == BIT_SET)
+??TIMER_A2_IRQ_Handler_6:
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetChannelPinInValue
+        CALLA   #TIMER_GetChannelPinInValue
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_8
+//  159      {
+//  160        if(MOTOR_L==1)//判断方向
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ReadBit
+        CALLA   #GPIO_ReadBit
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_9
+//  161          PulseAngle_l=0;
+        MOVX.B  #0x0, &PulseAngle_l
+        JMP     ??TIMER_A2_IRQ_Handler_0
+//  162        else
+//  163          PulseAngle_l=1;
+??TIMER_A2_IRQ_Handler_9:
+        MOVX.B  #0x1, &PulseAngle_l
+//  164        start_value_l = TIMER_Capture_GetValue  (TIMER_A2,TIMER_CH1);                    //读取发生该捕获条件时的计数值
+??TIMER_A2_IRQ_Handler_0:
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??start_value_l
+//  165        overflowTime_l = 0;
+        MOVX.W  #0x0, &overflowTime_l
+        JMP     ??TIMER_A2_IRQ_Handler_1
+//  166      }
+//  167      else if( TIMER_GetChannelPinInValue(TIMER_A2,TIMER_CH1) == RESET)//如果捕获到下降沿
+??TIMER_A2_IRQ_Handler_8:
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetChannelPinInValue
+        CALLA   #TIMER_GetChannelPinInValue
+        CMP.B   #0x0, R12
+        JNE     ??TIMER_A2_IRQ_Handler_1
+//  168      {
+//  169        if(MOTOR_L==1)//判断方向
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ReadBit
+        CALLA   #GPIO_ReadBit
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_10
+//  170          PulseAngle_l=0;
+        MOVX.B  #0x0, &PulseAngle_l
+        JMP     ??TIMER_A2_IRQ_Handler_2
+//  171        else
+//  172          PulseAngle_l=1;
+??TIMER_A2_IRQ_Handler_10:
+        MOVX.B  #0x1, &PulseAngle_l
+//  173        start_value_l = TIMER_Capture_GetValue  (TIMER_A2,TIMER_CH1);                    //读取发生该捕获条件时的计数值
+??TIMER_A2_IRQ_Handler_2:
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??start_value_l
+//  174        overflowTime_l = 0;
+        MOVX.W  #0x0, &overflowTime_l
+//  175      }
+//  176      
+//  177      if(GPIO_GetITStatus(P1,4)==TRUE)
+??TIMER_A2_IRQ_Handler_1:
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_GetITStatus
+        CALLA   #GPIO_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_11
+//  178      {
+//  179        stop_value_l = TIMER_Capture_GetValue  (TIMER_A2,TIMER_CH1);                    //读取发生该捕获条件时的计数值
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??stop_value_l
+//  180        if(stop_value_l>start_value_l);
+//  181        {
+//  182        
+//  183        PulseWidth_l_1 =TIMER_Capture_CalTime_Us(start_value_l,stop_value_l,overflowTime_l);//读取捕获时间并转化为距离
+        MOVX.W  &overflowTime_l, R14
+        MOVX.W  &??stop_value_l, R13
+        MOVX.W  &??start_value_l, R12
+          CFI FunCall TIMER_Capture_CalTime_Us
+        CALLA   #TIMER_Capture_CalTime_Us
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+//  184         if(PulseWidth_l_1>50&&PulseWidth_l_1<10000)PulseWidth_l=PulseWidth_l_1;
+        CMP.W   #0x0, R9
+        JNC     ??TIMER_A2_IRQ_Handler_11
+        JNE     ??TIMER_A2_IRQ_Handler_12
+        CMP.W   #0x33, R8
+        JNC     ??TIMER_A2_IRQ_Handler_11
+??TIMER_A2_IRQ_Handler_12:
+        CMP.W   #0x0, R9
+        JNC     ??TIMER_A2_IRQ_Handler_13
+        JNE     ??TIMER_A2_IRQ_Handler_11
+        CMP.W   #0x2710, R8
+        JC      ??TIMER_A2_IRQ_Handler_11
+??TIMER_A2_IRQ_Handler_13:
+        MOVX.W  R8, &PulseWidth_l
+        MOVX.W  R9, &PulseWidth_l + 2
+//  185        }
+//  186      }
+//  187      GPIO_ClearITPendingBit(P1,4);                //清除位中断标志
+??TIMER_A2_IRQ_Handler_11:
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ClearITPendingBit
+        CALLA   #GPIO_ClearITPendingBit
+//  188      TIMER_ClearITPendingBit(TIMER_A2,TIMER_CCR1_IRQn);     //清除TIMER的某一个中断标志
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ClearITPendingBit
+        CALLA   #TIMER_ClearITPendingBit
+//  189     }
+//  190     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  191      
+//  192      
+//  193      if(TIMER_GetITStatus(TIMER_A2,TIMER_CCR2_IRQn) == TRUE)  //获取某一通道中断标志
+??TIMER_A2_IRQ_Handler_7:
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetITStatus
+        CALLA   #TIMER_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_14
+//  194    {
+//  195      //如果捕获到上升沿
+//  196      if( TIMER_GetChannelPinInValue(TIMER_A2,TIMER_CH2) == BIT_SET)
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetChannelPinInValue
+        CALLA   #TIMER_GetChannelPinInValue
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_15
+//  197      {
+//  198        if(MOTOR_R==1)//判断方向
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ReadBit
+        CALLA   #GPIO_ReadBit
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_16
+//  199          PulseAngle_r=0;
+        MOVX.B  #0x0, &PulseAngle_r
+        JMP     ??TIMER_A2_IRQ_Handler_3
+//  200        else
+//  201          PulseAngle_r=1;
+??TIMER_A2_IRQ_Handler_16:
+        MOVX.B  #0x1, &PulseAngle_r
+//  202        start_value_r = TIMER_Capture_GetValue  (TIMER_A2,TIMER_CH2);                    //读取发生该捕获条件时的计数值
+??TIMER_A2_IRQ_Handler_3:
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??start_value_r
+//  203        overflowTime_r = 0;
+        MOVX.W  #0x0, &overflowTime_r
+        JMP     ??TIMER_A2_IRQ_Handler_4
+//  204      }
+//  205      //如果捕获到下降沿
+//  206      else 
+//  207      {
+//  208        stop_value_r = TIMER_Capture_GetValue  (TIMER_A2,TIMER_CH2);                    //读取发生该捕获条件时的计数值
+??TIMER_A2_IRQ_Handler_15:
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_GetValue
+        CALLA   #TIMER_Capture_GetValue
+        MOVX.W  R12, &??stop_value_r
+//  209        //if(TIMER_Capture_CalTime_Us(start_value_r,stop_value_r,overflowTime_r)>100)
+//  210        PulseWidth_l_r =TIMER_Capture_CalTime_Us(start_value_r,stop_value_r,overflowTime_r);//读取捕获时间并转化为距离
+        MOVX.W  &overflowTime_r, R14
+        MOVX.W  &??stop_value_r, R13
+        MOVX.W  &??start_value_r, R12
+          CFI FunCall TIMER_Capture_CalTime_Us
+        CALLA   #TIMER_Capture_CalTime_Us
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  211       if(PulseWidth_l_r>50&&PulseWidth_l_r<10000)PulseWidth_r=PulseWidth_l_r;
+        CMP.W   #0x0, R11
+        JNC     ??TIMER_A2_IRQ_Handler_4
+        JNE     ??TIMER_A2_IRQ_Handler_17
+        CMP.W   #0x33, R10
+        JNC     ??TIMER_A2_IRQ_Handler_4
+??TIMER_A2_IRQ_Handler_17:
+        CMP.W   #0x0, R11
+        JNC     ??TIMER_A2_IRQ_Handler_18
+        JNE     ??TIMER_A2_IRQ_Handler_4
+        CMP.W   #0x2710, R10
+        JC      ??TIMER_A2_IRQ_Handler_4
+??TIMER_A2_IRQ_Handler_18:
+        MOVX.W  R10, &PulseWidth_r
+        MOVX.W  R11, &PulseWidth_r + 2
+//  212      }
+//  213      TIMER_ClearITPendingBit(TIMER_A2,TIMER_CCR2_IRQn);     //清除TIMER的某一个中断标志
+??TIMER_A2_IRQ_Handler_4:
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ClearITPendingBit
+        CALLA   #TIMER_ClearITPendingBit
+//  214     
+//  215    }
+//  216    
+//  217    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  218 
+//  219    
+//  220    if(TIMER_GetITStatus(TIMER_A2,TIMER_OverFlow_IRQn) == TRUE)//如果溢出
+??TIMER_A2_IRQ_Handler_14:
+        MOV.B   #0x7, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_GetITStatus
+        CALLA   #TIMER_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??TIMER_A2_IRQ_Handler_19
+//  221    {
+//  222      overflowTime_r++;          //溢出值加1
+        ADDX.W  #0x1, &overflowTime_r
+//  223      overflowTime_l++; 
+        ADDX.W  #0x1, &overflowTime_l
+//  224      //overflowTime_o++; 
+//  225      TIMER_ClearITPendingBit(TIMER_A2,TIMER_OverFlow_IRQn);     //清除TIMER的某一个中断标志
+        MOV.B   #0x7, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ClearITPendingBit
+        CALLA   #TIMER_ClearITPendingBit
+//  226    }
+//  227 }
+??TIMER_A2_IRQ_Handler_19:
+        POPM.A  #0x8, R15
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??start_value_l:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??stop_value_l:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??start_value_r:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??stop_value_r:
+        DS8 2
+//  228 
+//  229 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  230 void motor_angle_init()
+motor_angle_init:
+          CFI Block cfiBlock3 Using cfiCommon1
+          CFI Function motor_angle_init
+//  231 {
+//  232   GPIO_Init(P1,5,GPI);//定义编码器io用于判断方向
+        MOV.W   #0x1, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  233   GPIO_Init(P1,4,GPI);
+        MOV.W   #0x1, R14
+        MOV.W   #0x10, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  234   GPIO_Init(P1,3,GPO);//定义编码器io用于判断方向
+        MOV.W   #0x2, R14
+        MOV.W   #0x8, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  235   GPIO_Init(P1,2,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  236   GPIO_Init(P1,3,PULL_DOWN);//定义编码器io用于判断方向
+        MOV.W   #0x10, R14
+        MOV.W   #0x8, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  237   GPIO_Init(P1,2,PULL_DOWN);
+        MOV.W   #0x10, R14
+        MOV.W   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  238   GPIO_WriteBit(P1,2,0);
+        MOV.B   #0x0, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//  239   GPIO_WriteBit(P1,3,0);
+        MOV.B   #0x0, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI TailCall GPIO_WriteBit
+        BRA     #GPIO_WriteBit
+//  240 }
+          CFI EndBlock cfiBlock3
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  241 void key_init()
+key_init:
+          CFI Block cfiBlock4 Using cfiCommon1
+          CFI Function key_init
+//  242 {
+//  243   GPIO_Init(P1,1,GPI|PULL_UP);//定义编码器io用于判断方向
+        MOV.W   #0x21, R14
+        MOV.W   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  244   GPIO_Init(P2,1,GPI|PULL_UP);
+        MOV.W   #0x21, R14
+        MOV.W   #0x2, R13
+        MOV.B   #0x1, R12
+          CFI TailCall GPIO_MultiBits_Init
+        BRA     #GPIO_MultiBits_Init
+//  245 }
+          CFI EndBlock cfiBlock4
+//  246 
+//  247 
+//  248 
+//  249 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  250 void motor_PWM_init()//编码器定时器定义
+motor_PWM_init:
+          CFI Block cfiBlock5 Using cfiCommon1
+          CFI Function motor_PWM_init
+//  251 {
+//  252    //定时器B0，频率10K
+//  253   //TIMER_PWM_MultiChannel_Init      (TIMER_B0,10000, 1 ,TIMER_CH5);   //定时器TB0，通道5，P3.5
+//  254   TIMER_PWM_Init(TIMER_B0,400,TIMER_CH5);   //定时器TB0，通道5，P3.5
+        PUSH.W  #0x5
+          CFI CFA SP+6
+        MOV.B   #0x1, R13
+        MOV.W   #0x190, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_MultiChannel_Init
+        CALLA   #TIMER_PWM_MultiChannel_Init
+//  255   TIMER_PWM_Init(TIMER_B0,400,TIMER_CH2);   //定时器TB0，通道5，P3.5
+        PUSH.W  #0x2
+          CFI CFA SP+8
+        MOV.B   #0x1, R13
+        MOV.W   #0x190, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_MultiChannel_Init
+        CALLA   #TIMER_PWM_MultiChannel_Init
+//  256   TIMER_PWM_Init(TIMER_B0,400,TIMER_CH6);//P3.6
+        PUSH.W  #0x6
+          CFI CFA SP+10
+        MOV.B   #0x1, R13
+        MOV.W   #0x190, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_MultiChannel_Init
+        CALLA   #TIMER_PWM_MultiChannel_Init
+//  257   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH6, 0);             //设置某一个定时器某一个通道的占空比
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x6, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  258   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH5, 0);
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x5, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  259   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH2, 510);
+        MOV.W   #0x1fe, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x2, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  260 }
+        ADDA    #0x6, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  261 
+//  262 /**************************************************************************
+//  263 函数功能：小车运动数学模型
+//  264 入口参数：速度和转角
+//  265 返回  值：无
+//  266 **************************************************************************/
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  267 void Kinematic_Analysis(float velocity,float angle)
+Kinematic_Analysis:
+          CFI Block cfiBlock6 Using cfiCommon1
+          CFI Function Kinematic_Analysis
+//  268 {
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+//  269 		Target_B=(int)(velocity*(1+T*tan(angle*3.14/180)/2/L)); 
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0xf5c3, R14
+        MOV.W   #0x4048, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4334, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+          CFI FunCall tan
+        CALLA   #tan
+        MOV.W   #0x0, R14
+        MOV.W   #0x4020, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4000, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f80, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f80, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOVX.W  R12, &Target_B
+//  270 		Target_A=(int)(velocity*(1-T*tan(angle*3.14/180)/2/L));      //后轮差速
+        MOV.W   #0x0, R12
+        MOV.W   #0x3f80, R13
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0xf5c3, R14
+        MOV.W   #0x4048, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4334, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+          CFI FunCall tan
+        CALLA   #tan
+        MOV.W   #0x0, R14
+        MOV.W   #0x4020, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4000, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f80, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+          CFI FunCall _Sub32f
+        CALLA   #_Sub32f
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOVX.W  R12, &Target_A
+//  271 		Servo=(int)(SERVO_INIT+angle*K);                    //舵机转向 
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0x147b, R14
+        MOV.W   #0x410e, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4416, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOVX.W  R12, &Servo
+//  272                 if(Servo>850)Servo=850;
+        CMPX.W  #0x353, &Servo
+        JL      ??Kinematic_Analysis_0
+        MOVX.W  #0x352, &Servo
+//  273                 if(Servo<250)Servo=250;
+??Kinematic_Analysis_0:
+        CMPX.W  #0xfa, &Servo
+        JGE     ??Kinematic_Analysis_1
+        MOVX.W  #0xfa, &Servo
+//  274 }
+??Kinematic_Analysis_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  275 
+//  276 /**************************************************************************
+//  277 函数功能：赋值给PWM寄存器
+//  278 入口参数：左轮PWM、右轮PWM
+//  279 返回  值：无
+//  280 **************************************************************************/
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  281 void Set_Pwm(int motor_a,int motor_b,int servo)
+Set_Pwm:
+          CFI Block cfiBlock7 Using cfiCommon1
+          CFI Function Set_Pwm
+//  282 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   R12, R11
+        MOV.W   R13, R10
+        MOV.W   R14, R8
+//  283   if(RUND_FLAG==0)
+        CMPX.B  #0x0, &RUND_FLAG
+        JNE     ??Set_Pwm_1
+//  284   {
+//  285   GPIO_WriteBit(P1,2,0);
+        MOV.B   #0x0, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//  286   GPIO_WriteBit(P1,3,0);
+        MOV.B   #0x0, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//  287   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH6, motor_a);
+        MOV.W   R11, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOV.B   #0x6, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  288   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH5, motor_b);
+        MOV.W   R10, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOV.B   #0x5, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+        JMP     ??Set_Pwm_0
+//  289   }
+//  290   else if(RUND_FLAG==1)
+??Set_Pwm_1:
+        CMPX.B  #0x1, &RUND_FLAG
+        JNE     ??Set_Pwm_0
+//  291   {
+//  292   GPIO_WriteBit(P1,2,1);
+        MOV.B   #0x1, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//  293   GPIO_WriteBit(P1,3,1);
+        MOV.B   #0x1, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//  294   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH6, 1000-motor_a);
+        MOV.W   #0x3e8, R14
+        SUB.W   R11, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOV.B   #0x6, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  295   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH5, 1000-motor_b);
+        MOV.W   #0x3e8, R14
+        SUB.W   R10, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOV.B   #0x5, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  296   }
+//  297   TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH2, servo);
+??Set_Pwm_0:
+        MOV.W   R8, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOV.B   #0x2, R13
+        MOV.B   #0x3, R12
+          CFI FunCall TIMER_PWM_SetChannelDuty
+        CALLA   #TIMER_PWM_SetChannelDuty
+//  298 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock7
+//  299 
+//  300 
+//  301 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  302 int Get_battery_volt()
+Get_battery_volt:
+          CFI Block cfiBlock8 Using cfiCommon1
+          CFI Function Get_battery_volt
+//  303 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  304   int ad;
+//  305   ad = ADC_ReadChanelOnce  (ADC_CH0);
+        MOV.W   #0x1, R12
+          CFI FunCall ADC_ReadChanelOnce
+        CALLA   #ADC_ReadChanelOnce
+        MOV.W   R12, R10
+//  306   return ad;
+        MOV.W   R10, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+//  307 }
+          CFI EndBlock cfiBlock8
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  308 void Read_Encoder()
+Read_Encoder:
+          CFI Block cfiBlock9 Using cfiCommon1
+          CFI Function Read_Encoder
+//  309 {float angles;
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+//  310   speed_L=(long long)(300000/PulseWidth_r);
+        MOV.W   #0x93e0, R12
+        MOV.W   #0x4, R13
+        MOVX.W  &PulseWidth_r, R14
+        MOVX.W  &PulseWidth_r + 2, R15
+          CFI FunCall ?DivMod32u
+        CALLA   #?DivMod32u
+        MOVX.W  R12, &speed_L
+        MOVX.W  R13, &speed_L + 2
+//  311     speed_R=(long long)(300000/PulseWidth_l);
+        MOV.W   #0x93e0, R12
+        MOV.W   #0x4, R13
+        MOVX.W  &PulseWidth_l, R14
+        MOVX.W  &PulseWidth_l + 2, R15
+          CFI FunCall ?DivMod32u
+        CALLA   #?DivMod32u
+        MOVX.W  R12, &speed_R
+        MOVX.W  R13, &speed_R + 2
+//  312     if(overflowTime_r>50)
+        CMPX.W  #0x33, &overflowTime_r
+        JNC     ??Read_Encoder_0
+//  313       speed_L=0;
+        MOVX.W  #0x0, &speed_L
+        MOVX.W  #0x0, &speed_L + 2
+//  314     if(overflowTime_l>50)
+??Read_Encoder_0:
+        CMPX.W  #0x33, &overflowTime_l
+        JNC     ??Read_Encoder_1
+//  315       speed_R=0;
+        MOVX.W  #0x0, &speed_R
+        MOVX.W  #0x0, &speed_R + 2
+//  316     if(overflowTime_o>50)
+??Read_Encoder_1:
+        CMPX.W  #0x33, &overflowTime_o
+        JNC     ??Read_Encoder_2
+//  317       PulseWidth_o=1500;
+        MOVX.W  #0x5dc, &PulseWidth_o
+        MOVX.W  #0x0, &PulseWidth_o + 2
+//  318    angles=(float)((float)SBUS.Ch1-1000)*45/800;
+??Read_Encoder_2:
+        MOVX.W  &SBUS + 2, R12
+        MOV.W   #0x0, R13
+          CFI FunCall _Cast32uto32f
+        CALLA   #_Cast32uto32f
+        MOV.W   #0x0, R14
+        MOV.W   #0xc47a, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4234, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4448, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  319    Angle=Angle*3/4+angles/4;
+        MOVX.W  &Angle, R12
+        MOVX.W  &Angle + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4040, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4080, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4080, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &Angle
+        MOVX.W  R13, &Angle + 2
+//  320 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  321 /**************************************************************************
+//  322 函数功能：增量PI控制器
+//  323 入口参数：编码器测量值，目标速度
+//  324 返回  值：电机PWM
+//  325 根据增量式离散PID公式 
+//  326 pwm+=Kp[e（k）-e(k-1)]+Ki*e(k)+Kd[e(k)-2e(k-1)+e(k-2)]
+//  327 e(k)代表本次偏差 
+//  328 e(k-1)代表上一次的偏差  以此类推 
+//  329 pwm代表增量输出
+//  330 在我们的速度控制闭环系统里面，只使用PI控制
+//  331 pwm+=Kp[e（k）-e(k-1)]+Ki*e(k)
+//  332 **************************************************************************/
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  333 int Incremental_PI_A (int Encoder,int Target)
+Incremental_PI_A:
+          CFI Block cfiBlock10 Using cfiCommon1
+          CFI Function Incremental_PI_A
+//  334 { 	
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.W   R12, R7
+        MOV.W   R13, R6
+//  335 	 static int Bias,Pwm,Last_bias;
+//  336          int Amplitude=900;
+        MOV.W   #0x384, R4
+//  337 	 Bias=Target-Encoder;                //计算偏差
+        MOV.W   R6, R15
+        SUB.W   R7, R15
+        MOVX.W  R15, &??Bias
+//  338 	 Pwm+=Velocity_KP*(Bias-Last_bias)+Velocity_KI*Bias;   //增量式PI控制器
+        MOVX.W  &??Pwm, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &??Bias, R12
+        SUBX.W  &??Last_bias, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  &Velocity_KP, R14
+        MOVX.W  &Velocity_KP + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOVX.W  &??Bias, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  &Velocity_KI, R14
+        MOVX.W  &Velocity_KI + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOVX.W  R12, &??Pwm
+//  339 	 Last_bias=Bias;	                   //保存上一次偏差 
+        MOVX.W  &??Bias, &??Last_bias
+//  340          if(Pwm>Amplitude) Pwm=Amplitude;
+        CMPX.W  &??Pwm, R4
+        JGE     ??Incremental_PI_A_0
+        MOVX.W  R4, &??Pwm
+//  341          if(Pwm<0)Pwm=(-1)*Pwm;
+??Incremental_PI_A_0:
+        CMPX.W  #0x0, &??Pwm
+        JGE     ??Incremental_PI_A_1
+        PUSH.W  SR
+          CFI CFA SP+38
+        DINT
+        NOP
+        MOV.W   #0xffff, &__iar_HWMUL          // MPY
+        MOVX.W  &??Pwm, &__iar_HWMUL + 8       // OP2
+        MOVX.W  &__iar_HWMUL + 10, &??Pwm      // RESLO
+        NOP
+        POP.W   SR
+          CFI CFA SP+36
+        NOP
+//  342 	 return Pwm;                         //增量输出
+??Incremental_PI_A_1:
+        MOVX.W  &??Pwm, R12
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+//  343 }
+          CFI EndBlock cfiBlock10
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Bias:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Pwm:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Last_bias:
+        DS8 2
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  344 int Incremental_PI_B (int Encoder,int Target)
+Incremental_PI_B:
+          CFI Block cfiBlock11 Using cfiCommon1
+          CFI Function Incremental_PI_B
+//  345 { 	
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.W   R12, R7
+        MOV.W   R13, R6
+//  346 	 static int Bias,Pwm,Last_bias;
+//  347          int Amplitude=900;
+        MOV.W   #0x384, R4
+//  348 	 Bias=Target-Encoder;                //计算偏差
+        MOV.W   R6, R15
+        SUB.W   R7, R15
+        MOVX.W  R15, &??Bias_1
+//  349 	 Pwm+=Velocity_KP*(Bias-Last_bias)+Velocity_KI*Bias;   //增量式PI控制器
+        MOVX.W  &??Pwm_1, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &??Bias_1, R12
+        SUBX.W  &??Last_bias_1, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  &Velocity_KP, R14
+        MOVX.W  &Velocity_KP + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOVX.W  &??Bias_1, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  &Velocity_KI, R14
+        MOVX.W  &Velocity_KI + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+          CFI FunCall _Cast32fto32s
+        CALLA   #_Cast32fto32s
+        MOVX.W  R12, &??Pwm_1
+//  350 	 Last_bias=Bias;	                   //保存上一次偏差 
+        MOVX.W  &??Bias_1, &??Last_bias_1
+//  351          if(Pwm>Amplitude) Pwm=Amplitude;
+        CMPX.W  &??Pwm_1, R4
+        JGE     ??Incremental_PI_B_0
+        MOVX.W  R4, &??Pwm_1
+//  352          if(Pwm<0)Pwm=(-1)*Pwm;
+??Incremental_PI_B_0:
+        CMPX.W  #0x0, &??Pwm_1
+        JGE     ??Incremental_PI_B_1
+        PUSH.W  SR
+          CFI CFA SP+38
+        DINT
+        NOP
+        MOV.W   #0xffff, &__iar_HWMUL          // MPY
+        MOVX.W  &??Pwm_1, &__iar_HWMUL + 8     // OP2
+        MOVX.W  &__iar_HWMUL + 10, &??Pwm_1    // RESLO
+        NOP
+        POP.W   SR
+          CFI CFA SP+36
+        NOP
+//  353 	 return Pwm;                         //增量输出
+??Incremental_PI_B_1:
+        MOVX.W  &??Pwm_1, R12
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+//  354 }
+          CFI EndBlock cfiBlock11
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Bias_1:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Pwm_1:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??Last_bias_1:
+        DS8 2
+//  355 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  356 void vounetr_chack()
+vounetr_chack:
+          CFI Block cfiBlock12 Using cfiCommon1
+          CFI Function vounetr_chack
+//  357 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  358   static int motu1=0;
+//  359   static int motu2=0;
+//  360   motu1=speed_R/5+motu1*4/5;
+        MOVX.W  &speed_R, R12
+        MOVX.W  &speed_R + 2, R13
+        MOV.W   #0x5, R14
+        MOV.W   #0x0, R15
+          CFI FunCall ?DivMod32s
+        CALLA   #?DivMod32s
+        MOV.W   R12, R11
+        MOVX.W  &??motu1, R12
+        RLAM.W  #0x2, R12
+        MOV.W   #0x5, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        ADD.W   R12, R11
+        MOVX.W  R11, &??motu1
+//  361   motu2=speed_L/5+motu2*4/5;
+        MOVX.W  &speed_L, R12
+        MOVX.W  &speed_L + 2, R13
+        MOV.W   #0x5, R14
+        MOV.W   #0x0, R15
+          CFI FunCall ?DivMod32s
+        CALLA   #?DivMod32s
+        MOV.W   R12, R11
+        MOVX.W  &??motu2, R12
+        RLAM.W  #0x2, R12
+        MOV.W   #0x5, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        ADD.W   R12, R11
+        MOVX.W  R11, &??motu2
+//  362   if(((speed_R-motu1)>100)||((motu1-speed_R)>100))
+        MOVX.W  &speed_R, R10
+        MOVX.W  &speed_R + 2, R11
+        MOVX.W  &??motu1, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        SUB.W   R14, R10
+        SUBC.W  R15, R11
+        CMP.W   #0x0, R11
+        JL      ??vounetr_chack_2
+        JNE     ??vounetr_chack_0
+        CMP.W   #0x65, R10
+        JC      ??vounetr_chack_0
+??vounetr_chack_2:
+        MOVX.W  &??motu1, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        SUBX.W  &speed_R, R14
+        SUBCX.W &speed_R + 2, R15
+        CMP.W   #0x0, R15
+        JL      ??vounetr_chack_3
+        JNE     ??vounetr_chack_0
+        CMP.W   #0x65, R14
+        JNC     ??vounetr_chack_3
+//  363   {
+//  364   speed_R=motu1;
+??vounetr_chack_0:
+        MOVX.W  &??motu1, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOVX.W  R14, &speed_R
+        MOVX.W  R15, &speed_R + 2
+//  365   }
+//  366   if(((speed_L-motu2)>100)||((motu2-speed_L)>100))
+??vounetr_chack_3:
+        MOVX.W  &speed_L, R10
+        MOVX.W  &speed_L + 2, R11
+        MOVX.W  &??motu2, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        SUB.W   R14, R10
+        SUBC.W  R15, R11
+        CMP.W   #0x0, R11
+        JL      ??vounetr_chack_4
+        JNE     ??vounetr_chack_1
+        CMP.W   #0x65, R10
+        JC      ??vounetr_chack_1
+??vounetr_chack_4:
+        MOVX.W  &??motu2, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        SUBX.W  &speed_L, R14
+        SUBCX.W &speed_L + 2, R15
+        CMP.W   #0x0, R15
+        JL      ??vounetr_chack_5
+        JNE     ??vounetr_chack_1
+        CMP.W   #0x65, R14
+        JNC     ??vounetr_chack_5
+//  367   {
+//  368   speed_L=motu2;
+??vounetr_chack_1:
+        MOVX.W  &??motu2, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        MOVX.W  R14, &speed_L
+        MOVX.W  R15, &speed_L + 2
+//  369   }
+//  370   speed_R=speed_R/2+motu1/2;
+??vounetr_chack_5:
+        MOVX.W  &speed_R, R12
+        MOVX.W  &speed_R + 2, R13
+        MOV.W   #0x2, R14
+        MOV.W   #0x0, R15
+          CFI FunCall ?DivMod32s
+        CALLA   #?DivMod32s
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &??motu1, R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+        ADD.W   R12, R10
+        ADDC.W  R13, R11
+        MOVX.W  R10, &speed_R
+        MOVX.W  R11, &speed_R + 2
+//  371   speed_L=speed_L/2+motu2/2;
+        MOVX.W  &speed_L, R12
+        MOVX.W  &speed_L + 2, R13
+        MOV.W   #0x2, R14
+        MOV.W   #0x0, R15
+          CFI FunCall ?DivMod32s
+        CALLA   #?DivMod32s
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &??motu2, R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+        ADD.W   R12, R10
+        ADDC.W  R13, R11
+        MOVX.W  R10, &speed_L
+        MOVX.W  R11, &speed_L + 2
+//  372 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??motu1:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??motu2:
+        DS8 2
+//  373 
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT TIMER_TA0_A0_IRQ_Handler, "interrupt"
+//  374 __interrupt void TIMER_TA0_A0_IRQ_Handler()
+TIMER_TA0_A0_IRQ_Handler:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function TIMER_TA0_A0_IRQ_Handler
+//  375 {
+        PUSHM.A #0x6, R15
+          CFI R10L Frame(CFA, -28)
+          CFI R10H Frame(CFA, -26)
+          CFI R11L Frame(CFA, -24)
+          CFI R11H Frame(CFA, -22)
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+28
+//  376    static int fenpin=0;
+//  377         Read_Encoder();
+          CFI FunCall Read_Encoder
+        CALLA   #Read_Encoder
+//  378 	Encoder_right=speed_R;                                       //===读取编码器的值							 //为了保证M法测速的时间基准，首先读取编码器数据
+        MOVX.W  &speed_R, &Encoder_right
+//  379 	Encoder_Left=speed_L;                                      //===读取编码器的值
+        MOVX.W  &speed_L, &Encoder_Left
+//  380    	vounetr_chack();
+          CFI FunCall vounetr_chack
+        CALLA   #vounetr_chack
+//  381         
+//  382 
+//  383 	Kinematic_Analysis(Velocity,Angle);  	//小车运动学分析   
+        MOVX.W  &Angle, R14
+        MOVX.W  &Angle + 2, R15
+        MOVX.W  &Velocity, R12
+        MOVX.W  &Velocity + 2, R13
+          CFI FunCall Kinematic_Analysis
+        CALLA   #Kinematic_Analysis
+//  384     if(mode==1)
+        CMPX.B  #0x1, &mode
+        JNE     ??TIMER_TA0_A0_IRQ_Handler_0
+//  385     {
+//  386 	Motor_A=Incremental_PI_A(Encoder_right,Target_A);                   //===速度闭环控制计算电机A最终PWM
+        MOVX.W  &Target_A, R13
+        MOVX.W  &Encoder_right, R12
+          CFI FunCall Incremental_PI_A
+        CALLA   #Incremental_PI_A
+        MOVX.W  R12, &Motor_A
+//  387 	Motor_B=Incremental_PI_B(speed_L,Target_B);                  //===速度闭环控制计算电机B最终PWM 
+        MOVX.W  &Target_B, R13
+        MOVX.W  &speed_L, R12
+          CFI FunCall Incremental_PI_B
+        CALLA   #Incremental_PI_B
+        MOVX.W  R12, &Motor_B
+//  388     }
+//  389 	
+//  390 	Set_Pwm(Motor_A,Motor_B,Servo);                                 	 //===赋值给PWM寄存器  
+??TIMER_TA0_A0_IRQ_Handler_0:
+        MOVX.W  &Servo, R14
+        MOVX.W  &Motor_B, R13
+        MOVX.W  &Motor_A, R12
+          CFI FunCall Set_Pwm
+        CALLA   #Set_Pwm
+//  391    
+//  392     //Set_Pwm(0,0,SERVO_INIT);                                 						 //===赋值给PWM寄存器  	
+//  393 	if(fenpin == 10)	
+        CMPX.W  #0xa, &??fenpin
+        JNE     ??TIMER_TA0_A0_IRQ_Handler_1
+//  394         {
+//  395           fenpin=0;
+        MOVX.W  #0x0, &??fenpin
+//  396           Voltage_Temp=Voltage_Temp*9/10+Get_battery_volt()/10;
+          CFI FunCall Get_battery_volt
+        CALLA   #Get_battery_volt
+        MOV.W   R12, R10
+        MOVX.W  &Voltage_Temp, R12
+        MOV.W   R12, R15
+        RLAM.W  #0x3, R12
+        ADD.W   R15, R12
+        MOV.W   #0xa, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R11
+        MOV.W   R10, R12
+        MOV.W   #0xa, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        ADD.W   R12, R11
+        MOVX.W  R11, &Voltage_Temp
+//  397         }//=====读取电池电压		
+//  398    	fenpin++;	                                   
+??TIMER_TA0_A0_IRQ_Handler_1:
+        ADDX.W  #0x1, &??fenpin
+//  399 
+//  400 }
+        POPM.A  #0x6, R15
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock13
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+??fenpin:
+        DS8 2
+//  401 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  402 void SBUS_Handle()
+SBUS_Handle:
+          CFI Block cfiBlock14 Using cfiCommon1
+          CFI Function SBUS_Handle
+//  403 {
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+//  404   int k,n,i,tp=0;
+        MOV.W   #0x0, R9
+//  405   char buff1,buff;
+//  406   while(SBUS_RX_Finish==0)
+??SBUS_Handle_0:
+        CMPX.B  #0x0, &SBUS_RX_Finish
+        JNE     ??SBUS_Handle_5
+//  407   {
+//  408     DELAY_US(200);
+        ////////////// Start of 125 cycles delay.
+        MOV.W   #0x28, R15
+??SBUS_Handle_4:
+        ADD.W   #0xffff, R15
+        JC      ??SBUS_Handle_4
+        ////////////// End of delay code.
+//  409     tp++;
+        ADD.W   #0x1, R9
+//  410     if(tp>600)
+        CMP.W   #0x259, R9
+        JL      ??SBUS_Handle_0
+//  411     {
+//  412       SBUS_FLAG=0;
+        MOVX.B  #0x0, &SBUS_FLAG
+//  413       break;
+//  414     }
+//  415   }
+//  416 	if(SBUS_RX_Finish==1)
+??SBUS_Handle_5:
+        CMPX.B  #0x1, &SBUS_RX_Finish
+        JNE     ??SBUS_Handle_6
+//  417         {
+//  418           SBUS_FLAG=1;
+        MOVX.B  #0x1, &SBUS_FLAG
+//  419 		SBUS_RX_Finish=0;//准备下一次接收
+        MOVX.B  #0x0, &SBUS_RX_Finish
+//  420 		UART_ITConfig  (UART0,UART_RX_IRQn,DISABLE); //从UART_RXBuffer读取数据过程中要关闭中断，防止读写混乱
+        MOV.B   #0x0, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall UART_ITConfig
+        CALLA   #UART_ITConfig
+//  421                 for(n=0;n<25;n++)
+        MOV.W   #0x0, R10
+??SBUS_Handle_2:
+        CMP.W   #0x19, R10
+        JGE     ??SBUS_Handle_7
+//  422                 {
+//  423                   buff=SBUS_RXBuffer[n];
+        MOV.W   R10, R15
+        MOVX.B  SBUS_RXBuffer(R15), R7
+//  424                   buff1=0;
+        MOV.B   #0x0, R6
+//  425                  for(k=0;k<8;k++)
+        MOV.W   #0x0, R8
+??SBUS_Handle_1:
+        CMP.W   #0x8, R8
+        JGE     ??SBUS_Handle_8
+//  426                   buff1|=((buff>>k)&0x01)<<(7-k);
+        MOV.B   R7, R15
+        SUB.B   #0x1, R8
+        JN      ??SBUS_Handle_9
+        RPT     R8
+        RRAX.W  R15
+??SBUS_Handle_9:
+        ADD.B   #0x1, R8
+        AND.W   #0x1, R15
+        MOV.B   #0x7, R14
+        SUB.B   R8, R14
+        SUB.B   #0x1, R14
+        JN      ??SBUS_Handle_10
+        RPT     R14
+        RLAX.W  R15
+??SBUS_Handle_10:
+        ADD.B   #0x1, R14
+        BIS.B   R15, R6
+        ADD.W   #0x1, R8
+        JMP     ??SBUS_Handle_1
+//  427                  SBUS_RXBuffer[n]=buff1;
+??SBUS_Handle_8:
+        MOV.W   R10, R15
+        MOVX.B  R6, SBUS_RXBuffer(R15)
+//  428                 }
+        ADD.W   #0x1, R10
+        JMP     ??SBUS_Handle_2
+//  429       
+//  430                 for(i=0;i<25;i++)
+??SBUS_Handle_7:
+        MOV.W   #0x0, R11
+??SBUS_Handle_3:
+        CMP.W   #0x19, R11
+        JGE     ??SBUS_Handle_11
+//  431                 UART_Printf   (UART1,"%2X   ",SBUS_RXBuffer[i]);
+        MOV.W   R11, R15
+        MOVX.B  SBUS_RXBuffer(R15), R15
+        MOV.B   R15, R15
+        PUSH.W  R15
+          CFI CFA SP+30
+        MOVA    #`?<Constant "%2X   ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+        ADD.W   #0x1, R11
+        ADDA    #0x2, SP
+          CFI CFA SP+28
+        JMP     ??SBUS_Handle_3
+//  432                 
+//  433                 
+//  434 		SBUS.Start=SBUS_RXBuffer[0];
+??SBUS_Handle_11:
+        MOVX.B  &SBUS_RXBuffer, &SBUS
+//  435 		SBUS.Ch1=((uint16_t)SBUS_RXBuffer[1])|((uint16_t)((SBUS_RXBuffer[2]&0x07)<<8));
+        MOVX.B  &SBUS_RXBuffer + 1, R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 2, R15
+        MOV.B   R15, R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        AND.W   #0x700, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 2
+//  436 		SBUS.Ch2=((uint16_t)((SBUS_RXBuffer[2]&0xf8)>>3))|(((uint16_t)(SBUS_RXBuffer[3]&0x3f))<<5);
+        MOVX.B  &SBUS_RXBuffer + 2, R14
+        RPT     #0x3
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 3, R15
+        MOV.B   R15, R15
+        AND.W   #0x3f, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x1, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 4
+//  437 		SBUS.Ch3=((uint16_t)((SBUS_RXBuffer[3]&0xc0)>>6))|((((uint16_t)SBUS_RXBuffer[4])<<2))|(((uint16_t)(SBUS_RXBuffer[5]&0x01))<<10);
+        MOVX.B  &SBUS_RXBuffer + 5, R13
+        AND.B   #0x1, R13
+        RPT     #0x2
+        RLAX.B  R13
+        AND.W   #0xff, R13
+        SWPB    R13
+        MOVX.B  &SBUS_RXBuffer + 3, R14
+        RPT     #0x6
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 4, R15
+        MOV.B   R15, R15
+        RLAM.W  #0x2, R15
+        BIS.W   R15, R14
+        BIS.W   R13, R14
+        MOVX.W  R14, &SBUS + 6
+//  438 		SBUS.Ch4=((uint16_t)((SBUS_RXBuffer[5]&0xfe)>>1))|(((uint16_t)(SBUS_RXBuffer[6]&0x0f))<<7);
+        MOVX.B  &SBUS_RXBuffer + 5, R14
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 6, R15
+        MOV.B   R15, R15
+        AND.W   #0xf, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x3, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 8
+//  439 		SBUS.Ch5=((uint16_t)((SBUS_RXBuffer[6]&0xf0)>>4))|(((uint16_t)(SBUS_RXBuffer[7]&0x7f))<<4);
+        MOVX.B  &SBUS_RXBuffer + 6, R14
+        RPT     #0x4
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 7, R15
+        MOV.B   R15, R15
+        AND.W   #0x7f, R15
+        RLAM.W  #0x4, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 10
+//  440 		SBUS.Ch6=((uint16_t)((SBUS_RXBuffer[7]&0x80)>>7))|(((uint16_t)SBUS_RXBuffer[8])<<1)|(((uint16_t)(SBUS_RXBuffer[9]&0x03))<<9);
+        MOVX.B  &SBUS_RXBuffer + 9, R14
+        MOV.B   R14, R14
+        AND.W   #0x3, R14
+        RLA.B   R14
+        AND.W   #0xff, R14
+        SWPB    R14
+        BITX.B  #0x80, &SBUS_RXBuffer + 7
+        SUBC.W  R13, R13
+        ADD.W   #0x1, R13
+        MOVX.B  &SBUS_RXBuffer + 8, R15
+        MOV.B   R15, R15
+        RLA.W   R15
+        BIS.W   R15, R13
+        BIS.W   R14, R13
+        MOVX.W  R13, &SBUS + 12
+//  441 		SBUS.Ch7=((uint16_t)((SBUS_RXBuffer[9]&0xfc)>>2))|(((uint16_t)(SBUS_RXBuffer[10]&0x1f))<<6);
+        MOVX.B  &SBUS_RXBuffer + 9, R14
+        RPT     #0x2
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 10, R15
+        MOV.B   R15, R15
+        AND.W   #0x1f, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x2, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 14
+//  442 		SBUS.Ch8=((uint16_t)((SBUS_RXBuffer[10]&0xe0)>>5))|(((uint16_t)(SBUS_RXBuffer[11]))<<3);
+        MOVX.B  &SBUS_RXBuffer + 10, R14
+        RPT     #0x5
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 11, R15
+        MOV.B   R15, R15
+        RLAM.W  #0x3, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 16
+//  443 		SBUS.Ch9=((uint16_t)SBUS_RXBuffer[12])|(((uint16_t)(SBUS_RXBuffer[13]&0x07))<<8);
+        MOVX.B  &SBUS_RXBuffer + 12, R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 13, R15
+        MOV.B   R15, R15
+        AND.W   #0x7, R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 18
+//  444 		SBUS.Ch10=((uint16_t)((SBUS_RXBuffer[13]&0xf8)>>3))|(((uint16_t)(SBUS_RXBuffer[14]&0x3f))<<5);
+        MOVX.B  &SBUS_RXBuffer + 13, R14
+        RPT     #0x3
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 14, R15
+        MOV.B   R15, R15
+        AND.W   #0x3f, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x1, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 20
+//  445 		SBUS.Ch11=((uint16_t)((SBUS_RXBuffer[14]&0xc0)>>6))|(((uint16_t)SBUS_RXBuffer[15])<<2)|(((uint16_t)(SBUS_RXBuffer[16]&0x01))<<10);
+        MOVX.B  &SBUS_RXBuffer + 16, R13
+        AND.B   #0x1, R13
+        RPT     #0x2
+        RLAX.B  R13
+        AND.W   #0xff, R13
+        SWPB    R13
+        MOVX.B  &SBUS_RXBuffer + 14, R14
+        RPT     #0x6
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 15, R15
+        MOV.B   R15, R15
+        RLAM.W  #0x2, R15
+        BIS.W   R15, R14
+        BIS.W   R13, R14
+        MOVX.W  R14, &SBUS + 22
+//  446 		SBUS.Ch12=((uint16_t)((SBUS_RXBuffer[16]&0xfe)>>1))|(((uint16_t)(SBUS_RXBuffer[17]&0x0f))<<7);
+        MOVX.B  &SBUS_RXBuffer + 16, R14
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 17, R15
+        MOV.B   R15, R15
+        AND.W   #0xf, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x3, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 24
+//  447 		SBUS.Ch13=((uint16_t)((SBUS_RXBuffer[17]&0xf0)>>4))|(((uint16_t)(SBUS_RXBuffer[18]&0x7f))<<4);
+        MOVX.B  &SBUS_RXBuffer + 17, R14
+        RPT     #0x4
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 18, R15
+        MOV.B   R15, R15
+        AND.W   #0x7f, R15
+        RLAM.W  #0x4, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 26
+//  448 		SBUS.Ch14=((uint16_t)((SBUS_RXBuffer[18]&0x80)>>7))|(((uint16_t)SBUS_RXBuffer[19])<<1)|(((uint16_t)(SBUS_RXBuffer[20]&0x03))<<9);
+        MOVX.B  &SBUS_RXBuffer + 20, R14
+        MOV.B   R14, R14
+        AND.W   #0x3, R14
+        RLA.B   R14
+        AND.W   #0xff, R14
+        SWPB    R14
+        BITX.B  #0x80, &SBUS_RXBuffer + 18
+        SUBC.W  R13, R13
+        ADD.W   #0x1, R13
+        MOVX.B  &SBUS_RXBuffer + 19, R15
+        MOV.B   R15, R15
+        RLA.W   R15
+        BIS.W   R15, R13
+        BIS.W   R14, R13
+        MOVX.W  R13, &SBUS + 28
+//  449 		SBUS.Ch15=((uint16_t)((SBUS_RXBuffer[20]&0xfc)>>2))|(((uint16_t)(SBUS_RXBuffer[21]&0x1f))<<6);
+        MOVX.B  &SBUS_RXBuffer + 20, R14
+        RPT     #0x2
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 21, R15
+        MOV.B   R15, R15
+        AND.W   #0x1f, R15
+        RLAM.W  #0x4, R15
+        RLAM.W  #0x2, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 30
+//  450 		SBUS.Ch16=((uint16_t)((SBUS_RXBuffer[21]&0xe0)>>5))|(((uint16_t)SBUS_RXBuffer[22])<<3);
+        MOVX.B  &SBUS_RXBuffer + 21, R14
+        RPT     #0x5
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOVX.B  &SBUS_RXBuffer + 22, R15
+        MOV.B   R15, R15
+        RLAM.W  #0x3, R15
+        BIS.W   R15, R14
+        MOVX.W  R14, &SBUS + 32
+//  451 		SBUS.Flag=SBUS_RXBuffer[23];
+        MOVX.B  &SBUS_RXBuffer + 23, &SBUS + 34
+//  452 	  SBUS.End=SBUS_RXBuffer[24];
+        MOVX.B  &SBUS_RXBuffer + 24, &SBUS + 35
+//  453 		UART_ITConfig  (UART0,UART_RX_IRQn,TRUE);                //开串口接收中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall UART_ITConfig
+        CALLA   #UART_ITConfig
+//  454 	}
+//  455 }
+??SBUS_Handle_6:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock14
+//  456 
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT UART0_RX_IRQ_Handler, "interrupt"
+//  457 __interrupt void UART0_RX_IRQ_Handler()
+UART0_RX_IRQ_Handler:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function UART0_RX_IRQ_Handler
+//  458 { char buff,buff1=0;
+        PUSHM.A #0x6, R15
+          CFI R10L Frame(CFA, -28)
+          CFI R10H Frame(CFA, -26)
+          CFI R11L Frame(CFA, -24)
+          CFI R11H Frame(CFA, -22)
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   #0x0, R11
+//  459 int k;
+//  460   if(UART_GetITStatus(UART0,UART_RX_IRQn) == TRUE)   //清除串口某一个中断标志
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall UART_GetITStatus
+        CALLA   #UART_GetITStatus
+        CMP.B   #0x1, R12
+        JNE     ??UART0_RX_IRQ_Handler_0
+//  461   {
+//  462     SBUS_RX_Finish=0;
+        MOVX.B  #0x0, &SBUS_RX_Finish
+//  463     //传输速率高时，接收中断里不要做其他事件，否则会丢失数据，另外主时钟也要设高一点
+//  464 
+//  465     buff=UART_GetChar     (UART0);                 //读取一个字节1个字节
+        MOV.B   #0x0, R12
+          CFI FunCall UART_GetChar
+        CALLA   #UART_GetChar
+        MOV.B   R12, R10
+//  466    
+//  467     if(buff==0xf0)
+        CMP.B   #0xf0, R10
+        JNE     ??UART0_RX_IRQ_Handler_1
+//  468     {
+//  469       SBUS_RX_Finish=0;
+        MOVX.B  #0x0, &SBUS_RX_Finish
+//  470       num=0;
+        MOVX.W  #0x0, &num
+//  471     }
+//  472     if(num<25)
+??UART0_RX_IRQ_Handler_1:
+        CMPX.W  #0x19, &num
+        JGE     ??UART0_RX_IRQ_Handler_2
+//  473     {
+//  474     SBUS_RXBuffer[num]=buff;
+        MOVX.W  &num, R15
+        MOVX.B  R10, SBUS_RXBuffer(R15)
+//  475     num++;
+        ADDX.W  #0x1, &num
+//  476     }
+//  477      if(SBUS_RXBuffer[22]==0xCA&&num==24)
+??UART0_RX_IRQ_Handler_2:
+        CMPX.B  #0xca, &SBUS_RXBuffer + 22
+        JNE     ??UART0_RX_IRQ_Handler_3
+        CMPX.W  #0x18, &num
+        JNE     ??UART0_RX_IRQ_Handler_3
+//  478    {
+//  479      SBUS_RX_Finish=1;
+        MOVX.B  #0x1, &SBUS_RX_Finish
+//  480      SBUS_RXBuffer[22]=0;
+        MOVX.B  #0x0, &SBUS_RXBuffer + 22
+//  481    }
+//  482     
+//  483     UART_ClearITPendingBit(UART0,UART_RX_IRQn);    //清除串口某一个中断标志
+??UART0_RX_IRQ_Handler_3:
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall UART_ClearITPendingBit
+        CALLA   #UART_ClearITPendingBit
+//  484   }
+//  485 
+//  486 }
+??UART0_RX_IRQ_Handler_0:
+        POPM.A  #0x6, R15
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock15
+//  487 
+//  488 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  489 void main()
+main:
+          CFI Block cfiBlock16 Using cfiCommon2
+          CFI Function main
+//  490 {
+//  491   int iq1=0,iq2=0;
+        MOV.W   #0x0, R10
+        MOV.W   #0x0, R11
+//  492   int i;
+//  493   int error=0; 
+        MOV.W   #0x0, R8
+//  494   
+//  495 int ad1=0;
+        MOV.W   #0x0, R9
+//  496   DisableInterrupts();          //禁止总中断
+        DINT
+        NOP
+//  497   //CLOCK_DCO_PLLConfig     (FLLREF_REFO, FLLREF_DIV_1, 16MHZ); 
+//  498   LED_Init(LED_ALL);              //LED灯初始化
+        MOV.B   #0x2, R12
+          CFI FunCall LED_Init
+        CALLA   #LED_Init
+//  499   OLED_Init(); 
+          CFI FunCall OLED_Init
+        CALLA   #OLED_Init
+//  500   KEY_Init(KEY1,NULL);
+        MOVA    #0x0, R13
+        MOV.B   #0x0, R12
+          CFI FunCall KEY_Init
+        CALLA   #KEY_Init
+//  501   KEY_Init(KEY2,NULL);
+        MOVA    #0x0, R13
+        MOV.B   #0x1, R12
+          CFI FunCall KEY_Init
+        CALLA   #KEY_Init
+//  502   UART_Init        (UART1,115200);                      //初始化UART1模块,波特率115200，波特率高时最好把主时钟 设高些
+        MOV.W   #0xc200, R14
+        MOV.W   #0x1, R15
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Init
+        CALLA   #UART_Init
+//  503   
+//  504   Set_Vector_Handler(VECTOR_UART1,UART_RX_IRQ_Handler);    //设置接收中断向量
+        MOVA    #UART_RX_IRQ_Handler, R13
+        MOV.B   #0x2e, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  505   
+//  506   UART_ITConfig  (UART1,UART_RX_IRQn,TRUE);                //开串口接收中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_ITConfig
+        CALLA   #UART_ITConfig
+//  507   UART0_Init        (UART0,100000); 
+        MOV.W   #0x86a0, R14
+        MOV.W   #0x1, R15
+        MOV.B   #0x0, R12
+          CFI FunCall UART0_Init
+        CALLA   #UART0_Init
+//  508   Set_Vector_Handler(VECTOR_UART0,UART0_RX_IRQ_Handler);    //设置接收中断向量
+        MOVA    #UART0_RX_IRQ_Handler, R13
+        MOV.B   #0x38, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  509   UART_ITConfig  (UART0,UART_RX_IRQn,TRUE);                //开串口接收中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall UART_ITConfig
+        CALLA   #UART_ITConfig
+//  510   
+//  511   motor_PWM_init();
+          CFI FunCall motor_PWM_init
+        CALLA   #motor_PWM_init
+//  512   motor_angle_init();
+          CFI FunCall motor_angle_init
+        CALLA   #motor_angle_init
+//  513                                    						 //===赋值给PWM寄存器  	
+//  514 /////////编码器定时器设置////////////
+//  515   Set_Vector_Handler(VECTOR_TIMER_A1,TIMER_A1_IRQ_Handler);    //设置接收中断向量
+        MOVA    #TIMER_A1_IRQ_Handler, R13
+        MOV.B   #0x30, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  516   TIMER_Capture_Init  (TIMER_A1, TIMER_CH1, CAP_RisingAndFalling);        //初始化一个通道为捕获模式， 
+        MOV.B   #0x3, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_Capture_Init
+        CALLA   #TIMER_Capture_Init
+//  517   TIMER_ITConfig   (TIMER_A1, TIMER_CCR1_IRQn,ENABLE);               //设置是否使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  518   TIMER_ITConfig   (TIMER_A1, TIMER_OverFlow_IRQn,ENABLE);               //设置是否使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x7, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  519   
+//  520   Set_Vector_Handler(VECTOR_TIMER_A2,TIMER_A2_IRQ_Handler);    //设置接收中断向量
+        MOVA    #TIMER_A2_IRQ_Handler, R13
+        MOV.B   #0x2b, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  521   Set_Vector_Handler(VECTOR_PORT1,TIMER_A2_IRQ_Handler);    //设置中断向量
+        MOVA    #TIMER_A2_IRQ_Handler, R13
+        MOV.B   #0x2f, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  522   Set_Vector_Handler(VECTOR_PORT2,TIMER_A2_IRQ_Handler);    //设置中断向量
+        MOVA    #TIMER_A2_IRQ_Handler, R13
+        MOV.B   #0x2a, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  523   GPIO_Init     (P1,5 ,GPI|PULL_UP|IRQ_FALLING|IRQ_RISING);                   //设为上拉且下降沿触发中断
+        MOV.W   #0xe1, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  524   GPIO_ITConfig (P1,5 ,ENABLE);                           //使能中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ITConfig
+        CALLA   #GPIO_ITConfig
+//  525   GPIO_Init     (P1,4 ,GPI|PULL_UP|IRQ_FALLING|IRQ_RISING);                   //设为上拉且下降沿触发中断
+        MOV.W   #0xe1, R14
+        MOV.W   #0x10, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  526   GPIO_ITConfig (P1,4 ,ENABLE);                           //使能中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall GPIO_ITConfig
+        CALLA   #GPIO_ITConfig
+//  527   TIMER_Capture_Init  (TIMER_A2, TIMER_CH1, CAP_RisingAndFalling);        //初始化一个通道为捕获模式， 
+        MOV.B   #0x3, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_Init
+        CALLA   #TIMER_Capture_Init
+//  528   TIMER_ITConfig   (TIMER_A2, TIMER_CCR1_IRQn,ENABLE);               //设置是否使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  529   
+//  530   TIMER_Capture_Init  (TIMER_A2, TIMER_CH2, CAP_RisingAndFalling);        //初始化一个通道为捕获模式， 
+        MOV.B   #0x3, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_Capture_Init
+        CALLA   #TIMER_Capture_Init
+//  531   TIMER_ITConfig   (TIMER_A2, TIMER_CCR2_IRQn,ENABLE);               //设置是否使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  532   
+//  533   TIMER_ITConfig   (TIMER_A2, TIMER_OverFlow_IRQn,ENABLE);               //设置是否使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x7, R13
+        MOV.B   #0x2, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  534   
+//  535 
+//  536   
+//  537   Set_Vector_Handler(VECTOR_TIMER0_A0,TIMER_TA0_A0_IRQ_Handler);    //设置中断向量，最好先设置中断向量，在开启中断
+        MOVA    #TIMER_TA0_A0_IRQ_Handler, R13
+        MOV.B   #0x35, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  538   TIMER_Interval_Us(TIMER_A0,5000);                    //初始化一个1000ms的定时中断,不要写为1000*1000，否则会提示超出范围
+        MOV.W   #0x1388, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x0, R12
+          CFI FunCall TIMER_Interval_Us
+        CALLA   #TIMER_Interval_Us
+//  539   TIMER_ITConfig (TIMER_A0,TIMER_CCR0_IRQn,ENABLE);              //使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  540   ADC_Init(ADC_CH0,ADC_VREF_3_3V,ADC_12bit); 
+        MOV.B   #0x2, R14
+        MOV.B   #0x2, R13
+        MOV.W   #0x1, R12
+          CFI FunCall ADC_Init
+        CALLA   #ADC_Init
+//  541   ADC_Init(ADC_CH1,ADC_VREF_3_3V,ADC_12bit); 
+        MOV.B   #0x2, R14
+        MOV.B   #0x2, R13
+        MOV.W   #0x2, R12
+          CFI FunCall ADC_Init
+        CALLA   #ADC_Init
+        NOP
+//  542 
+//  543   EnableInterrupts();
+        EINT
+//  544   SBUS.Ch1=1000;
+        MOVX.W  #0x3e8, &SBUS + 2
+//  545   while(1)
+//  546   {  
+//  547     LED_Turn(LED2);
+??main_0:
+        MOV.B   #0x1, R12
+          CFI FunCall LED_Turn
+        CALLA   #LED_Turn
+//  548      DELAY_MS(10);
+        ////////////// Start of 250000 cycles delay.
+        MOV.W   #0xf422, R15
+        NOP
+        MOV.W   #0x0, R14
+??main_5:
+        ADD.W   #0xffff, R15
+        ADDC.W  #0xffff, R14
+        JC      ??main_5
+        ////////////// End of delay code.
+//  549      //UART_Printf   (UART1,"IN:%ld \n\r",speed_L);
+//  550      //UART_Printf   (UART1,"OUT:%ld \n\r",Motor_B);
+//  551      if(KEY_isPressed(KEY1))
+        MOV.B   #0x0, R12
+          CFI FunCall KEY_isPressed
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JEQ     ??main_6
+//  552      {
+//  553        mode=1;
+        MOVX.B  #0x1, &mode
+//  554        iq1+=100;
+        ADD.W   #0x64, R10
+//  555        iq2+=100;
+        ADD.W   #0x64, R11
+        JMP     ??main_1
+//  556      }
+//  557      else if(KEY_isPressed(KEY2))
+??main_6:
+        MOV.B   #0x1, R12
+          CFI FunCall KEY_isPressed
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JEQ     ??main_1
+//  558      {
+//  559        mode=0;
+        MOVX.B  #0x0, &mode
+//  560        iq1-=100;
+        ADD.W   #0xff9c, R10
+//  561        iq2-=100;
+        ADD.W   #0xff9c, R11
+//  562      }
+//  563      SBUS_Handle();
+??main_1:
+          CFI FunCall SBUS_Handle
+        CALLA   #SBUS_Handle
+//  564      if(iq1>3000)
+        CMP.W   #0xbb9, R10
+        JL      ??main_7
+//  565        iq1=3000;
+        MOV.W   #0xbb8, R10
+//  566      if(iq1<0)
+??main_7:
+        CMP.W   #0x0, R10
+        JGE     ??main_8
+//  567        iq1=0;
+        MOV.W   #0x0, R10
+//  568      if(mode==0)
+??main_8:
+        CMPX.B  #0x0, &mode
+        JNE     ??main_9
+//  569      Velocity=0;
+        MOVX.W  #0x0, &Velocity
+        MOVX.W  #0x0, &Velocity + 2
+        JMP     ??main_2
+//  570      else if(mode==1)
+??main_9:
+        CMPX.B  #0x1, &mode
+        JNE     ??main_2
+//  571      Velocity=SBUS.Ch3;
+        MOVX.W  &SBUS + 6, R12
+        MOV.W   #0x0, R13
+          CFI FunCall _Cast32uto32f
+        CALLA   #_Cast32uto32f
+        MOVX.W  R12, &Velocity
+        MOVX.W  R13, &Velocity + 2
+//  572      //Target_B=iq1;
+//  573       if(Velocity<40)
+??main_2:
+        MOVX.W  &Velocity, R12
+        MOVX.W  &Velocity + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4220, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_10
+//  574       Velocity=0;
+        MOVX.W  #0x0, &Velocity
+        MOVX.W  #0x0, &Velocity + 2
+//  575       if(SBUS_FLAG==0) 
+??main_10:
+        CMPX.B  #0x0, &SBUS_FLAG
+        JNE     ??main_11
+//  576       error++;  
+        ADD.W   #0x1, R8
+        JMP     ??main_3
+//  577       else
+//  578       error=0;
+??main_11:
+        MOV.W   #0x0, R8
+//  579       if(error>20)
+??main_3:
+        CMP.W   #0x15, R8
+        JL      ??main_12
+//  580       {
+//  581         Velocity=0;
+        MOVX.W  #0x0, &Velocity
+        MOVX.W  #0x0, &Velocity + 2
+//  582         SBUS.Ch1=1000;
+        MOVX.W  #0x3e8, &SBUS + 2
+//  583       }
+//  584       if(SBUS.Ch6<500)
+??main_12:
+        CMPX.W  #0x1f4, &SBUS + 12
+        JC      ??main_13
+//  585       {
+//  586         RUND_FLAG=0;
+        MOVX.B  #0x0, &RUND_FLAG
+        JMP     ??main_4
+//  587       }
+//  588       else if(SBUS.Ch6>1500)
+??main_13:
+        CMPX.W  #0x5dd, &SBUS + 12
+        JNC     ??main_4
+//  589       {
+//  590         RUND_FLAG=1;
+        MOVX.B  #0x1, &RUND_FLAG
+//  591       }
+//  592      //TIMER_PWM_SetChannelDuty  (TIMER_B0, TIMER_CH5, iq1);
+//  593 
+//  594     ad1 = ADC_ReadChanelOnce  (ADC_CH1);
+??main_4:
+        MOV.W   #0x2, R12
+          CFI FunCall ADC_ReadChanelOnce
+        CALLA   #ADC_ReadChanelOnce
+        MOV.W   R12, R9
+//  595     OLED_PrintfAt(FONT_ASCII_6X8,0,0,"right_v:%ld   Mode   ",(uint32_t)Motor_B);
+        MOVX.W  &Motor_B, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        PUSH.W  R15
+          CFI CFA SP+6
+        PUSH.W  R14
+          CFI CFA SP+8
+        MOVA    #`?<Constant "right_v:%ld   Mode   ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  596     OLED_PrintfAt(FONT_ASCII_6X8,1,0,"left_v :%ld     %d   ",(uint32_t)Motor_A,mode);
+        MOVX.B  &mode, R15
+        MOV.B   R15, R15
+        PUSH.W  R15
+          CFI CFA SP+10
+        MOVX.W  &Motor_A, R14
+        MOV.W   R14, R15
+        RLA.W   R15
+        SUBC.W  R15, R15
+        XOR.W   #0xffff, R15
+        PUSH.W  R15
+          CFI CFA SP+12
+        PUSH.W  R14
+          CFI CFA SP+14
+        MOVA    #`?<Constant "left_v :%ld     %d   ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  597     OLED_PrintfAt(FONT_ASCII_6X8,2,0,"R:%d   L:%d   Ctrl:%d",PulseAngle_r,PulseAngle_l,error);
+        MOVX.B  &PulseAngle_l, R15
+        PUSH.W  R8
+          CFI CFA SP+16
+        MOV.B   R15, R15
+        PUSH.W  R15
+          CFI CFA SP+18
+        MOVX.B  &PulseAngle_r, R15
+        MOV.B   R15, R15
+        PUSH.W  R15
+          CFI CFA SP+20
+        MOVA    #`?<Constant "R:%d   L:%d   Ctrl:%d">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  598     OLED_PrintfAt(FONT_ASCII_6X8,3,0,"right_s:%ld  ",(uint32_t)speed_R);
+        PUSHX.W &speed_R + 2
+          CFI CFA SP+22
+        PUSHX.W &speed_R
+          CFI CFA SP+24
+        MOVA    #`?<Constant "right_s:%ld  ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  599     OLED_PrintfAt(FONT_ASCII_6X8,4,0,"left_s :%ld  ",(uint32_t)speed_L);
+        PUSHX.W &speed_L + 2
+          CFI CFA SP+26
+        PUSHX.W &speed_L
+          CFI CFA SP+28
+        MOVA    #`?<Constant "left_s :%ld  ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  600     OLED_PrintfAt(FONT_ASCII_6X8,5,0,"speed:%d   %d  ",iq1,SBUS.Ch3);
+        PUSHX.W &SBUS + 6
+          CFI CFA SP+30
+        PUSH.W  R10
+          CFI CFA SP+32
+        MOVA    #`?<Constant "speed:%d   %d  ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  601     OLED_PrintfAt(FONT_ASCII_6X8,6,0,"angle:%f          ",(float)Angle);
+        PUSHX.W &Angle + 2
+          CFI CFA SP+34
+        PUSHX.W &Angle
+          CFI CFA SP+36
+        MOVA    #`?<Constant "angle:%f          ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x6, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  602     OLED_PrintfAt(FONT_ASCII_6X8,7,0,"ADValue: %2f  ",(float)Voltage_Temp*3.3*11/4096);
+        MOVX.W  &Voltage_Temp, R12
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0x3333, R12
+        MOV.W   #0x4053, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0x0, R12
+        MOV.W   #0x4130, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4580, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        PUSH.W  R13
+          CFI CFA SP+38
+        PUSH.W  R12
+          CFI CFA SP+40
+        MOVA    #`?<Constant "ADValue: %2f  ">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x7, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_PrintfAt
+        CALLA   #OLED_PrintfAt
+//  603    //UART_Printf   (UART1,"%c",0xff);
+//  604     
+//  605       //UART_Printf   (UART1,"/////////////////////////////////////// \n\r",SBUS.Ch1);
+//  606     
+//  607     
+//  608      //UART_Printf   (UART1,"\n\r",0xff);
+//  609      if(SBUS_FLAG)
+        ADDA    #0x24, SP
+          CFI CFA SP+4
+        CMPX.B  #0x0, &SBUS_FLAG
+        JEQ     ??main_0
+//  610      {
+//  611       UART_Printf   (UART1,"%d    ",SBUS.Ch1);
+        PUSHX.W &SBUS + 2
+          CFI CFA SP+6
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  612       UART_Printf   (UART1,"%d    ",SBUS.Ch2);
+        PUSHX.W &SBUS + 4
+          CFI CFA SP+8
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  613       UART_Printf   (UART1,"%d    ",SBUS.Ch3);
+        PUSHX.W &SBUS + 6
+          CFI CFA SP+10
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  614       UART_Printf   (UART1,"%d    ",SBUS.Ch4);
+        PUSHX.W &SBUS + 8
+          CFI CFA SP+12
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  615       UART_Printf   (UART1,"%d    ",SBUS.Ch5);
+        PUSHX.W &SBUS + 10
+          CFI CFA SP+14
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  616       UART_Printf   (UART1,"%d    ",SBUS.Ch6);
+        PUSHX.W &SBUS + 12
+          CFI CFA SP+16
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  617       UART_Printf   (UART1,"%d    ",SBUS.Ch7);
+        PUSHX.W &SBUS + 14
+          CFI CFA SP+18
+        MOVA    #`?<Constant "%d    ">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+//  618       UART_Printf   (UART1,"%d     \n\r",SBUS.Ch8);
+        PUSHX.W &SBUS + 16
+          CFI CFA SP+20
+        MOVA    #`?<Constant "%d     \\n\\r">`, R13
+        MOV.B   #0x1, R12
+          CFI FunCall UART_Printf
+        CALLA   #UART_Printf
+        ADDA    #0x10, SP
+          CFI CFA SP+4
+        JMP     ??main_0
+        NOP
+//  619      }
+//  620 
+//  621     //UART_Printf   (UART1,"//////////////////////////////////////\n\r");
+//  622 
+//  623   }
+//  624 }
+          CFI EndBlock cfiBlock16
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for Velocity_KP>`:
+        DATA32
+        DC32 3F19999AH
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for Velocity_KI>`:
+        DATA32
+        DC32 3CA3D70AH
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "%2X   ">`:
+        DC8 "%2X   "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "right_v:%ld   Mode   ">`:
+        DC8 "right_v:%ld   Mode   "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "left_v :%ld     %d   ">`:
+        DC8 "left_v :%ld     %d   "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "R:%d   L:%d   Ctrl:%d">`:
+        DC8 "R:%d   L:%d   Ctrl:%d"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "right_s:%ld  ">`:
+        DC8 "right_s:%ld  "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "left_s :%ld  ">`:
+        DC8 "left_s :%ld  "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "speed:%d   %d  ">`:
+        DC8 "speed:%d   %d  "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "angle:%f          ">`:
+        DC8 "angle:%f          "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "ADValue: %2f  ">`:
+        DC8 "ADValue: %2f  "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "%d    ">`:
+        DC8 "%d    "
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "%d     \\n\\r">`:
+        DC8 "%d     \012\015"
+
+        END
+//  625 
+// 
+// 3 732 bytes in segment CODE
+//   168 bytes in segment DATA20_C
+//     8 bytes in segment DATA20_I
+//     8 bytes in segment DATA20_ID
+//   646 bytes in segment DATA20_Z
+// 1 026 bytes in segment ISR_CODE
+// 
+// 4 758 bytes of CODE  memory
+//   176 bytes of CONST memory
+//   654 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: 11

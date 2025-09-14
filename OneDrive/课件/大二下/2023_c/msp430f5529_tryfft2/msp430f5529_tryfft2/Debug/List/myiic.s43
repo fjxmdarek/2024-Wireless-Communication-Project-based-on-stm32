@@ -1,0 +1,1253 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V7.10.1.973/W32 for MSP430          07/Aug/2021  08:16:13
+// Copyright 1996-2017 IAR Systems AB.
+// Standalone license - IAR Embedded Workbench for Texas Instruments MSP430
+//
+//    __rt_version  =  3
+//    __double_size =  32
+//    __reg_r4      =  free
+//    __reg_r5      =  free
+//    __pic         =  no
+//    __core        =  430X
+//    __data_model  =  large
+//    __code_model  =  large
+//    Source file   =  C:\Users\79033\Desktop\test\msp430f5529\HardWare\myiic.c
+//    Command line  =  
+//        -f C:\Users\79033\AppData\Local\Temp\EW2380.tmp
+//        (C:\Users\79033\Desktop\test\msp430f5529\HardWare\myiic.c -D DEBUG -D
+//        RAM_VECTOR -lA C:\Users\79033\Desktop\test\msp430f5529\Debug\List -o
+//        C:\Users\79033\Desktop\test\msp430f5529\Debug\Obj --no_cse
+//        --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        -D__MSP430F5529__ -e --double=32 --dlib_config "C:\Program Files
+//        (x86)\IAR Systems\Embedded Workbench 8.0\430\lib\dlib\dl430xllff.h"
+//        -I C:\Users\79033\Desktop\test\msp430f5529\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_config\
+//        -I C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_User\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\srcUSB\USB_API\USB_CDC_API\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_API\USB_HID_API\
+//        -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Drivers\src\USB\USB_API\USB_MSC_API\
+//        -I C:\Users\79033\Desktop\test\msp430f5529\HardWare\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\delay\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\18b20\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\KEY\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LED\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\12864\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\oled\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\mpu6050\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\mpu6050\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nokia5110\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nokia5110\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LQ_1.8_TFT\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\LCD_API\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\2.2TFT\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\HardWare\nrf24l01\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\inc\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\System\src\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\User\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\User\USER\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Lib\FatFs\ -I
+//        C:\Users\79033\Desktop\test\msp430f5529\Lib\FatFs\option\ --core=430X
+//        --data_model=large -On --multiplier=32 --hw_workaround=CPU40
+//        --hw_workaround=nop_after_lpm --code_model=large)
+//    Locale        =  Chinese (Simplified)_CHN.936
+//    List file     =  
+//        C:\Users\79033\Desktop\test\msp430f5529\Debug\List\myiic.s43
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME myiic
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__code_model", "large"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC IIC_Ack
+        PUBLIC IIC_Init
+        PUBLIC IIC_NAck
+        PUBLIC IIC_Read_Byte
+        PUBLIC IIC_Read_One_Byte
+        PUBLIC IIC_SCL
+        PUBLIC IIC_SDA
+        PUBLIC IIC_Send_Byte
+        PUBLIC IIC_Start
+        PUBLIC IIC_Stop
+        PUBLIC IIC_Wait_Ack
+        PUBLIC IIC_Write_One_Byte
+        PUBLIC MY_I2C_PIN
+        PUBLIC READ_SDA
+        PUBLIC SDA_TYPE
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN GPIO_ReadBit
+        EXTERN GPIO_MultiBits_Init
+        EXTERN GPIO_WriteBit
+
+// C:\Users\79033\Desktop\test\msp430f5529\HardWare\myiic.c
+//    1 #include "myiic.h"
+//    2 #include "msp430f5529_gpio.h"
+//    3 #include "msp430f5529_system.h"
+//    4 
+//    5 const struct{
+//    6   GPIO_PIN SCL;
+//    7   GPIO_PIN SDA;
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//    8 }MY_I2C_PIN[]=
+MY_I2C_PIN:
+        DATA8
+        DC8 2, 1, 2, 0, 3, 2, 3, 1
+//    9 { //        SCL         SDA
+//   10   /*I2C_0*/{.SCL={P3,1},.SDA={P3,0}},           
+//   11   /*I2C1*/{.SCL={P4,2},.SDA={P4,1}}          
+//   12 };
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   13 uint8_t  READ_SDA(I2C_n i2cn)
+READ_SDA:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function READ_SDA
+//   14 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   15   return GPIO_ReadBit(MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin);  
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_ReadBit
+        CALLA   #GPIO_ReadBit
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+//   16 } 
+          CFI EndBlock cfiBlock0
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   17 void  SDA_TYPE(I2C_n i2cn,uint8_t levl)
+SDA_TYPE:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function SDA_TYPE
+//   18 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//   19   if(levl==1)
+        CMP.B   #0x1, R11
+        JNE     ??SDA_TYPE_1
+//   20   {
+//   21     GPIO_Init(MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??SDA_TYPE_2
+        RPT     R15
+        RLAX.W  R13
+??SDA_TYPE_2:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+        JMP     ??SDA_TYPE_0
+//   22   }
+//   23   else
+//   24   {
+//   25     GPIO_Init(MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,GPI);
+??SDA_TYPE_1:
+        MOV.W   #0x1, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??SDA_TYPE_3
+        RPT     R15
+        RLAX.W  R13
+??SDA_TYPE_3:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//   26     GPIO_Init(MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,PULL_UP);
+        MOV.W   #0x20, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??SDA_TYPE_4
+        RPT     R15
+        RLAX.W  R13
+??SDA_TYPE_4:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//   27     
+//   28   }
+//   29 }
+??SDA_TYPE_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   30 void IIC_SCL(I2C_n i2cn,uint8_t levl)    
+IIC_SCL:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function IIC_SCL
+//   31 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//   32   if(levl==1)
+        CMP.B   #0x1, R11
+        JNE     ??IIC_SCL_1
+//   33     GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,BIT_SET); //SCL
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+        JMP     ??IIC_SCL_0
+//   34   else
+//   35     GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,RESET); //SCL
+??IIC_SCL_1:
+        MOV.B   #0x0, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   36 }
+??IIC_SCL_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   37 void IIC_SDA(I2C_n i2cn,uint8_t levl)    
+IIC_SDA:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function IIC_SDA
+//   38 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//   39   if(levl==1)
+        CMP.B   #0x1, R11
+        JNE     ??IIC_SDA_1
+//   40     GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,BIT_SET); //SCL
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+        JMP     ??IIC_SDA_0
+//   41   else
+//   42     GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,RESET); //SCL
+??IIC_SDA_1:
+        MOV.B   #0x0, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   43 }
+??IIC_SDA_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//   44 /*******************************************************************************
+//   45 *  函数名称：IIC_Init(I2C_n i2cn,uint16_t SlaveID) 
+//   46 *  功能说明：初始化一个模块为I2C主机模块，并设置从机地址
+//   47 *  参数说明：I2C_n i2cn      :模块号
+//   48              uint8_t SlaveID  :从机地址
+//   49              
+//   50 *  函数返回：无
+//   51 *  使用示例：I2C_MasterInit   (I2C_0, 0x68);  //初始化I2C_0模块为主机，从机地址为0x68
+//   52 ********************************************************************************/
+//   53 //初始化IIC
+//   54 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   55 void IIC_Init(I2C_n i2cn,uint16_t SlaveID)
+IIC_Init:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function IIC_Init
+//   56 {	//输出9个时钟以恢复I2C_n总线状态  
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.W   R13, R11
+//   57         for(uint8_t i=0;i<9;i++)
+        MOV.B   #0x0, R8
+??IIC_Init_0:
+        CMP.B   #0x9, R8
+        JC      ??IIC_Init_1
+//   58         {
+//   59           GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,  BIT_SET);
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   60           DELAY_US(5);
+        ////////////// Start of 3 cycles delay.
+        RLAM.W  #0x3, R15
+        ////////////// End of delay code.
+//   61           GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,RESET);
+        MOV.B   #0x0, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   62           DELAY_US(5);
+        ////////////// Start of 3 cycles delay.
+        RLAM.W  #0x3, R15
+        ////////////// End of delay code.
+//   63         }
+        ADD.B   #0x1, R8
+        JMP     ??IIC_Init_0
+//   64         //初始化引脚
+//   65         GPIO_Init(MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,GPO);
+??IIC_Init_1:
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??IIC_Init_2
+        RPT     R15
+        RLAX.W  R13
+??IIC_Init_2:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//   66         GPIO_Init(MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??IIC_Init_3
+        RPT     R15
+        RLAX.W  R13
+??IIC_Init_3:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//   67         
+//   68         GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,BIT_SET);
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   69         GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,BIT_SET);
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   70         
+//   71         GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SCL.Port,MY_I2C_PIN[i2cn-I2C_0].SCL.Pin,PULL_UP);
+        MOV.B   #0x20, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 1(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   72         GPIO_WriteBit  (MY_I2C_PIN[i2cn-I2C_0].SDA.Port,MY_I2C_PIN[i2cn-I2C_0].SDA.Pin,PULL_UP);
+        MOV.B   #0x20, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 3(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  MY_I2C_PIN + 2(R15), R12
+          CFI FunCall GPIO_WriteBit
+        CALLA   #GPIO_WriteBit
+//   73  	
+//   74 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//   75 //产生IIC起始信号
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   76 void IIC_Start(I2C_n i2cn)
+IIC_Start:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function IIC_Start
+//   77 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   78 	SDA_TYPE(i2cn,1);     //sda线输出
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//   79 	IIC_SDA(i2cn,1);	  	  
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//   80 	IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//   81 	DELAY_US(4);
+        ////////////// Start of 2 cycles delay.
+??IIC_Start_0:
+        ////////////// End of delay code.
+//   82  	IIC_SDA(i2cn,0);//START:when CLK is high,DATA change form high to low 
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//   83 	DELAY_US(4);
+        ////////////// Start of 2 cycles delay.
+??IIC_Start_1:
+        ////////////// End of delay code.
+//   84 	IIC_SCL(i2cn,0);//钳住I2C总线，准备发送或接收数据 
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//   85 }	  
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//   86 //产生IIC停止信号
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   87 void IIC_Stop(I2C_n i2cn)
+IIC_Stop:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function IIC_Stop
+//   88 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   89 	SDA_TYPE(i2cn,1);//sda线输出
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//   90         IIC_SDA(i2cn,0);//STOP:when CLK is high DATA change form low to high
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//   91 	IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//   92 	
+//   93  	DELAY_US(4);
+        ////////////// Start of 2 cycles delay.
+??IIC_Stop_0:
+        ////////////// End of delay code.
+//   94 	IIC_SCL(i2cn,1); 
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//   95 	IIC_SDA(i2cn,1);//发送I2C总线结束信号
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//   96 	DELAY_US(4);							   	
+        ////////////// Start of 2 cycles delay.
+??IIC_Stop_1:
+        ////////////// End of delay code.
+//   97 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//   98 //等待应答信号到来
+//   99 //返回值：1，接收应答失败
+//  100 //        0，接收应答成功
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  101 uint8_t IIC_Wait_Ack(I2C_n i2cn)
+IIC_Wait_Ack:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function IIC_Wait_Ack
+//  102 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+//  103 	uint8_t ucErrTime=0;
+        MOV.B   #0x0, R11
+//  104 	SDA_TYPE(i2cn,0);      //SDA设置为输入  
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//  105 	IIC_SDA(i2cn,1);DELAY_US(1);	   
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+        ////////////// Start of 0 cycle delay.
+        ////////////// End of delay code.
+//  106 	IIC_SCL(i2cn,1);DELAY_US(1);	 
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+        ////////////// Start of 0 cycle delay.
+        ////////////// End of delay code.
+//  107 	while(READ_SDA(i2cn))
+??IIC_Wait_Ack_0:
+        MOV.B   R10, R12
+          CFI FunCall READ_SDA
+        CALLA   #READ_SDA
+        CMP.B   #0x0, R12
+        JEQ     ??IIC_Wait_Ack_2
+//  108 	{
+//  109 		ucErrTime++;
+        ADD.B   #0x1, R11
+//  110 		if(ucErrTime>250)
+        CMP.B   #0xfb, R11
+        JNC     ??IIC_Wait_Ack_0
+//  111 		{
+//  112 			IIC_Stop(i2cn);
+        MOV.B   R10, R12
+          CFI FunCall IIC_Stop
+        CALLA   #IIC_Stop
+//  113 			return 1;
+        MOV.B   #0x1, R12
+        JMP     ??IIC_Wait_Ack_1
+//  114 		}
+//  115 	}
+//  116 	IIC_SCL(i2cn,0);//时钟输出0 	   
+??IIC_Wait_Ack_2:
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  117 	return 0;  
+        MOV.B   #0x0, R12
+??IIC_Wait_Ack_1:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+//  118 } 
+          CFI EndBlock cfiBlock7
+//  119 //产生ACK应答
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  120 void IIC_Ack(I2C_n i2cn)
+IIC_Ack:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function IIC_Ack
+//  121 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  122 	IIC_SCL(i2cn,0);
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  123 	SDA_TYPE(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//  124 	IIC_SDA(i2cn,0);
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//  125 	DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  126 	IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  127 	DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  128 	IIC_SCL(i2cn,0);
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  129 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+//  130 //不产生ACK应答		    
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  131 void IIC_NAck(I2C_n i2cn)
+IIC_NAck:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function IIC_NAck
+//  132 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  133 	IIC_SCL(i2cn,0);
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  134 	SDA_TYPE(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//  135 	IIC_SDA(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//  136 	DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  137 	IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  138 	DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  139 	IIC_SCL(i2cn,0);
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  140 }					 				     
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  141 //IIC发送一个字节
+//  142 //返回从机有无应答
+//  143 //1，有应答
+//  144 //0，无应答			  
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  145 void IIC_Send_Byte(I2C_n i2cn,uint8_t txd)
+IIC_Send_Byte:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function IIC_Send_Byte
+//  146 {                        
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R8
+//  147     uint8_t t;   
+//  148 	SDA_TYPE(i2cn,1); 	    
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//  149     IIC_SCL(i2cn,0);//拉低时钟开始数据传输
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  150     for(t=0;t<8;t++)
+        MOV.B   #0x0, R11
+??IIC_Send_Byte_0:
+        CMP.B   #0x8, R11
+        JC      ??IIC_Send_Byte_1
+//  151     {              
+//  152         IIC_SDA(i2cn,(txd&0x80)>>7);
+        BIT.B   #0x80, R8
+        SUBC.B  R13, R13
+        ADD.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SDA
+        CALLA   #IIC_SDA
+//  153         txd<<=1; 	  
+        RLA.B   R8
+//  154 		DELAY_US(2);   //对TEA5767这三个延时都是必须的
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  155 		IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  156 		DELAY_US(2); 
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  157 		IIC_SCL(i2cn,0);	
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  158 		DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  159     }	 
+        ADD.B   #0x1, R11
+        JMP     ??IIC_Send_Byte_0
+//  160 } 	    
+??IIC_Send_Byte_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+//  161 //读1个字节，ack=1时，发送ACK，ack=0，发送nACK   
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  162 uint8_t IIC_Read_Byte(I2C_n i2cn,unsigned char ack)
+IIC_Read_Byte:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function IIC_Read_Byte
+//  163 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  164 	unsigned char i,receive=0;
+        MOV.B   #0x0, R9
+//  165 	SDA_TYPE(i2cn,0);//SDA设置为输入
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall SDA_TYPE
+        CALLA   #SDA_TYPE
+//  166     for(i=0;i<8;i++ )
+        MOV.B   #0x0, R8
+??IIC_Read_Byte_0:
+        CMP.B   #0x8, R8
+        JC      ??IIC_Read_Byte_2
+//  167 	{
+//  168         IIC_SCL(i2cn,0); 
+        MOV.B   #0x0, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  169         DELAY_US(2);
+        ////////////// Start of 1 cycle delay.
+        NOP
+        ////////////// End of delay code.
+//  170 		IIC_SCL(i2cn,1);
+        MOV.B   #0x1, R13
+        MOV.B   R10, R12
+          CFI FunCall IIC_SCL
+        CALLA   #IIC_SCL
+//  171         receive<<=1;
+        RLA.B   R9
+//  172         if(READ_SDA(i2cn))receive++;   
+        MOV.B   R10, R12
+          CFI FunCall READ_SDA
+        CALLA   #READ_SDA
+        CMP.B   #0x0, R12
+        JEQ     ??IIC_Read_Byte_3
+        ADD.B   #0x1, R9
+//  173 		DELAY_US(1); 
+??IIC_Read_Byte_3:
+        ////////////// Start of 0 cycle delay.
+        ////////////// End of delay code.
+//  174     }					 
+        ADD.B   #0x1, R8
+        JMP     ??IIC_Read_Byte_0
+//  175     if (!ack)
+??IIC_Read_Byte_2:
+        CMP.B   #0x0, R11
+        JNE     ??IIC_Read_Byte_4
+//  176         IIC_NAck(i2cn);//发送nACK
+        MOV.B   R10, R12
+          CFI FunCall IIC_NAck
+        CALLA   #IIC_NAck
+        JMP     ??IIC_Read_Byte_1
+//  177     else
+//  178         IIC_Ack(i2cn); //发送ACK   
+??IIC_Read_Byte_4:
+        MOV.B   R10, R12
+          CFI FunCall IIC_Ack
+        CALLA   #IIC_Ack
+//  179     return receive;
+??IIC_Read_Byte_1:
+        MOV.B   R9, R12
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+//  180 }
+          CFI EndBlock cfiBlock11
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  181 void IIC_Write_One_Byte(I2C_n i2cn,uint8_t daddr,uint8_t addr,uint8_t data)
+IIC_Write_One_Byte:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function IIC_Write_One_Byte
+//  182 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R8
+        MOV.B   R13, R9
+        MOV.B   R14, R10
+        MOV.B   R15, R11
+//  183     IIC_Start(i2cn);  
+        MOV.B   R8, R12
+          CFI FunCall IIC_Start
+        CALLA   #IIC_Start
+//  184     IIC_Send_Byte(i2cn,daddr<<1);   //发送器件地址0XA0,写数据 	 
+        MOV.B   R9, R13
+        RLA.B   R13
+        MOV.B   R8, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  185     IIC_Wait_Ack(i2cn);
+        MOV.B   R8, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  186     IIC_Send_Byte(i2cn,addr);   //发送地址
+        MOV.B   R10, R13
+        MOV.B   R8, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  187     IIC_Wait_Ack(i2cn); 	 										  		   
+        MOV.B   R8, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  188     IIC_Send_Byte(i2cn,data);     //发送字节							   
+        MOV.B   R11, R13
+        MOV.B   R8, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  189     IIC_Wait_Ack(i2cn);  		    	   
+        MOV.B   R8, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  190     IIC_Stop(i2cn);//产生一个停止条件 
+        MOV.B   R8, R12
+          CFI FunCall IIC_Stop
+        CALLA   #IIC_Stop
+//  191 	DELAY_US(100);
+        ////////////// Start of 62 cycles delay.
+        MOV.W   #0x13, R15
+??IIC_Write_One_Byte_0:
+        ADD.W   #0xffff, R15
+        JC      ??IIC_Write_One_Byte_0
+        ////////////// End of delay code.
+//  192   
+//  193 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//  194 uint8_t IIC_Read_One_Byte(I2C_n i2cn,uint8_t daddr,uint8_t addr)
+IIC_Read_One_Byte:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function IIC_Read_One_Byte
+//  195 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOV.B   R14, R10
+//  196     uint8_t temp=0;		  	    																 
+        MOV.B   #0x0, R9
+//  197     IIC_Start(i2cn);  
+        MOV.B   R11, R12
+          CFI FunCall IIC_Start
+        CALLA   #IIC_Start
+//  198     IIC_Send_Byte(i2cn,daddr<<1);   //发送器件地址0XA0,写数据 	 
+        MOV.B   R8, R13
+        RLA.B   R13
+        MOV.B   R11, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  199     IIC_Wait_Ack(i2cn);
+        MOV.B   R11, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  200     IIC_Send_Byte(i2cn,addr);   //发送地址
+        MOV.B   R10, R13
+        MOV.B   R11, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  201     IIC_Wait_Ack(i2cn);	    
+        MOV.B   R11, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  202     IIC_Start(i2cn);  	 	   
+        MOV.B   R11, R12
+          CFI FunCall IIC_Start
+        CALLA   #IIC_Start
+//  203     IIC_Send_Byte(i2cn,(daddr<<1)|0x01);           //进入接收模式			   
+        MOV.B   R8, R13
+        RLA.B   R13
+        BIS.B   #0x1, R13
+        MOV.B   R11, R12
+          CFI FunCall IIC_Send_Byte
+        CALLA   #IIC_Send_Byte
+//  204     IIC_Wait_Ack(i2cn);	 
+        MOV.B   R11, R12
+          CFI FunCall IIC_Wait_Ack
+        CALLA   #IIC_Wait_Ack
+//  205     temp=IIC_Read_Byte(i2cn,0);		   
+        MOV.B   #0x0, R13
+        MOV.B   R11, R12
+          CFI FunCall IIC_Read_Byte
+        CALLA   #IIC_Read_Byte
+        MOV.B   R12, R9
+//  206     IIC_Stop(i2cn);//产生一个停止条件	    
+        MOV.B   R11, R12
+          CFI FunCall IIC_Stop
+        CALLA   #IIC_Stop
+//  207 	return temp;
+        MOV.B   R9, R12
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+//  208   
+//  209 }
+          CFI EndBlock cfiBlock13
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  210 
+//  211 
+//  212 
+//  213 
+//  214 
+//  215 
+//  216 
+//  217 
+//  218 
+//  219 
+//  220 
+//  221 
+//  222 
+//  223 
+//  224 
+//  225 
+//  226 
+//  227 
+//  228 
+//  229 
+//  230 
+//  231 
+//  232 
+//  233 
+//  234 
+//  235 
+// 
+// 1 160 bytes in segment CODE
+//     8 bytes in segment DATA20_C
+// 
+// 1 160 bytes of CODE  memory
+//     8 bytes of CONST memory
+//
+//Errors: none
+//Warnings: 2

@@ -1,0 +1,828 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V8.10.2.1069/W32 for MSP430         03/Aug/2023  14:45:27
+// Copyright 1996-2022 IAR Systems AB.
+// Evaluation license - IAR Embedded Workbench for MSP430, Evaluation version 8.10
+//
+//    __rt_version  =  3
+//    __double_size =  32
+//    __reg_r4      =  free
+//    __reg_r5      =  free
+//    __pic         =  no
+//    __core        =  430X
+//    __data_model  =  large
+//    __code_model  =  large
+//    Source file   =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\fft.c
+//    Command line  =  
+//        -f
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver\fft.r43.rsp
+//        (C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\fft.c
+//        -D DEBUG -D RAM_VECTOR -lA
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\StdPeriph_Driver
+//        -o
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver
+//        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        -D__MSP430F5529__ -e --double=32 --dlib_config "C:\Program Files\IAR
+//        Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xllff.h" -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\ -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_config\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\srcUSB\USB_API\USB_CDC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_HID_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_MSC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\delay\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\18b20\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\KEY\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LED\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\12864\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\oled\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LQ_1.8_TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LCD_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\2.2TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nrf24l01\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\USER\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\option\
+//        --core=430X --data_model=large -On --multiplier=32
+//        --hw_workaround=CPU40 --hw_workaround=nop_after_lpm
+//        --code_model=large) --dependencies=n
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\StdPeriph_Driver\fft.r43.iar_deps
+//    Locale        =  Chinese (Simplified)_CHN.936
+//    List file     =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\StdPeriph_Driver\fft.s43
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME fft
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__code_model", "large"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?DivMod16s
+        EXTERN _Add32f
+        EXTERN _Sub32f
+        EXTERN _Mul32f
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC FFT
+        PUBLIC addComplex
+        PUBLIC imagSetToZero
+        PUBLIC inReverse
+        PUBLIC mulComplex
+        PUBLIC subComplex
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+// C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\fft.c
+//    1 #include "fft.h"
+//    2 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//    3 void imagSetToZero(Complex *data, int num) 
+imagSetToZero:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function imagSetToZero
+          CFI NoCalls
+//    4 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//    5     for (int i =  0; i < num; i++) {
+        MOV.W   #0x0, R15
+??imagSetToZero_0:
+        CMP.W   R13, R15
+        JGE     ??imagSetToZero_1
+//    6         (data + i)->imag = 0.0;
+        MOV.W   R15, R14
+        RLAM.A  #0x4, R14
+        RRAM.A  #0x4, R14
+        RLAM.A  #0x3, R14
+        MOVA    R14, R10
+        MOVA    R12, R14
+        ADDA    R10, R14
+        MOV.W   #0x0, 0x4(R14)
+        MOV.W   #0x0, 0x6(R14)
+//    7     }
+        ADD.W   #0x1, R15
+        JMP     ??imagSetToZero_0
+//    8 }
+??imagSetToZero_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//    9 
+//   10 //bit reversal for resequencing data
+//   11 //Rader algorithm
+//   12 //Input reverse
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   13 void inReverse(Complex *data, int num) { 
+inReverse:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function inReverse
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        SUBA    #0x8, SP
+          CFI CFA SP+36
+        MOVA    R12, R10
+        MOV.W   R13, R9
+//   14     Complex Temp;   
+//   15     int j = 0;
+        MOV.W   #0x0, R11
+//   16     int k = 0;
+        MOV.W   #0x0, R6
+//   17     
+//   18     for (int i = 1; i < (num - 1); i++) {
+        MOV.W   #0x1, R8
+??inReverse_1:
+        MOV.W   R9, R15
+        ADD.W   #0xffff, R15
+        CMP.W   R15, R8
+        JGE     ??inReverse_2
+//   19         k = num / 2;
+        MOV.W   R9, R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R6
+//   20 
+//   21         while (k <= j) {
+??inReverse_0:
+        CMP.W   R6, R11
+        JL      ??inReverse_3
+//   22             j = j - k;
+        SUB.W   R6, R11
+//   23             k = k / 2;
+        MOV.W   R6, R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R6
+        JMP     ??inReverse_0
+//   24         }
+//   25         j = j + k;
+??inReverse_3:
+        ADD.W   R6, R11
+//   26         if (i < j) {
+        CMP.W   R11, R8
+        JGE     ??inReverse_4
+//   27             Temp.real = (data + j)->real;
+        MOV.W   R11, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        ADDA    R10, R15
+        MOV.W   @R15, 0(SP)
+        MOV.W   0x2(R15), 0x2(SP)
+//   28             Temp.imag = (data + j)->imag;
+        MOV.W   R11, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R14
+        MOVA    R10, R15
+        ADDA    R14, R15
+        MOV.W   0x4(R15), 0x4(SP)
+        MOV.W   0x6(R15), 0x6(SP)
+//   29 
+//   30             (data + j)->real = (data + i)->real;
+        MOV.W   R8, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        ADDA    R10, R15
+        MOV.W   R11, R14
+        RLAM.A  #0x4, R14
+        RRAM.A  #0x4, R14
+        RLAM.A  #0x3, R14
+        ADDA    R10, R14
+        MOV.W   @R15, 0(R14)
+        MOV.W   0x2(R15), 0x2(R14)
+//   31             (data + j)->imag = (data + i)->imag;
+        MOV.W   R8, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R14
+        MOVA    R10, R15
+        ADDA    R14, R15
+        MOV.W   R11, R14
+        RLAM.A  #0x4, R14
+        RRAM.A  #0x4, R14
+        RLAM.A  #0x3, R14
+        MOVA    R14, R13
+        MOVA    R10, R14
+        ADDA    R13, R14
+        MOV.W   0x4(R15), 0x4(R14)
+        MOV.W   0x6(R15), 0x6(R14)
+//   32 
+//   33             (data + i)->real = Temp.real;
+        MOV.W   R8, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        ADDA    R10, R15
+        MOV.W   @SP, 0(R15)
+        MOV.W   0x2(SP), 0x2(R15)
+//   34             (data + i)->imag = Temp.imag;
+        MOV.W   R8, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R14
+        MOVA    R10, R15
+        ADDA    R14, R15
+        MOV.W   0x4(SP), 0x4(R15)
+        MOV.W   0x6(SP), 0x6(R15)
+//   35         }
+//   36     }
+??inReverse_4:
+        ADD.W   #0x1, R8
+        JMP     ??inReverse_1
+//   37 }
+??inReverse_2:
+        ADDA    #0x8, SP
+          CFI CFA SP+28
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//   38 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   39 void addComplex(Complex *getResult, Complex const *A, Complex const *withB) {
+addComplex:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function addComplex
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R10
+        MOVA    R13, R11
+        MOVA    R14, R8
+//   40     getResult->real = A->real + withB->real;
+        MOV.W   @R11, R12
+        MOV.W   0x2(R11), R13
+        MOV.W   @R8, R14
+        MOV.W   0x2(R8), R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R12, 0(R10)
+        MOV.W   R13, 0x2(R10)
+//   41     getResult->imag = A->imag + withB->imag;
+        MOV.W   0x4(R11), R12
+        MOV.W   0x6(R11), R13
+        MOV.W   0x4(R8), R14
+        MOV.W   0x6(R8), R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R12, 0x4(R10)
+        MOV.W   R13, 0x6(R10)
+//   42 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//   43 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   44 void subComplex(Complex *getResult, Complex const *A, Complex const *withB) {
+subComplex:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function subComplex
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R10
+        MOVA    R13, R11
+        MOVA    R14, R8
+//   45     getResult->real = A->real - withB->real;
+        MOV.W   @R11, R12
+        MOV.W   0x2(R11), R13
+        MOV.W   @R8, R14
+        MOV.W   0x2(R8), R15
+          CFI FunCall _Sub32f
+        CALLA   #_Sub32f
+        MOV.W   R12, 0(R10)
+        MOV.W   R13, 0x2(R10)
+//   46     getResult->imag = A->imag - withB->imag;
+        MOV.W   0x4(R11), R12
+        MOV.W   0x6(R11), R13
+        MOV.W   0x4(R8), R14
+        MOV.W   0x6(R8), R15
+          CFI FunCall _Sub32f
+        CALLA   #_Sub32f
+        MOV.W   R12, 0x4(R10)
+        MOV.W   R13, 0x6(R10)
+//   47 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//   48 
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   49 void mulComplex(Complex *getResult, Complex const *A, Complex const *withB) {
+mulComplex:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function mulComplex
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R10
+        MOVA    R13, R11
+        MOVA    R14, R8
+//   50     getResult->real = A->real * withB->real - A->imag * withB->imag;
+        MOV.W   @R11, R12
+        MOV.W   0x2(R11), R13
+        MOV.W   @R8, R14
+        MOV.W   0x2(R8), R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        MOV.W   0x4(R11), R12
+        MOV.W   0x6(R11), R13
+        MOV.W   0x4(R8), R14
+        MOV.W   0x6(R8), R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+          CFI FunCall _Sub32f
+        CALLA   #_Sub32f
+        MOV.W   R12, 0(R10)
+        MOV.W   R13, 0x2(R10)
+//   51     getResult->imag = A->real * withB->imag + A->imag * withB->real;
+        MOV.W   @R11, R12
+        MOV.W   0x2(R11), R13
+        MOV.W   0x4(R8), R14
+        MOV.W   0x6(R8), R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        MOV.W   0x4(R11), R12
+        MOV.W   0x6(R11), R13
+        MOV.W   @R8, R14
+        MOV.W   0x2(R8), R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R12, 0x4(R10)
+        MOV.W   R13, 0x6(R10)
+//   52 }
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//   53 
+//   54 //input sample array, # of points
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   55 void FFT(Complex *data, Complex const *factor, int num, int series)
+FFT:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function FFT
+//   56 {
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSHM.A #0x1, R13
+          CFI CFA SP+40
+        PUSH.W  R15
+          CFI CFA SP+42
+        SUBA    #0x1a, SP
+          CFI CFA SP+68
+        MOVA    R12, R11
+        MOV.W   R14, R7
+//   57     //temporary storage variables 
+//   58     Complex topData;
+//   59     Complex lowData;
+//   60     Complex dataIndex;
+//   61     //difference between top/lower leg
+//   62     int leg_diff;
+//   63     int lower_leg;
+//   64     //index/step through twiddle constant 
+//   65     int index = 0;
+        MOV.W   #0x0, R10
+//   66     //step between values
+//   67     int step = 1;
+        MOV.W   #0x1, R6
+//   68     //difference between upper & lower legs
+//   69     leg_diff = num / 2;
+        MOV.W   R7, R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R8
+//   70     
+//   71     imagSetToZero(data, num);
+        MOV.W   R7, R13
+        MOVA    R11, R12
+          CFI FunCall imagSetToZero
+        CALLA   #imagSetToZero
+//   72     
+//   73     //for N-point FFT
+//   74     for (int i = 0; i < series; i++)                   
+        MOV.W   #0x0, R4
+??FFT_2:
+        CMP.W   0x1a(SP), R4
+        JGE     ??FFT_3
+//   75     {
+//   76         index = 0;
+        MOV.W   #0x0, R10
+//   77         for (int j = 0; j < leg_diff; j++) {
+        MOV.W   #0x0, R5
+??FFT_1:
+        CMP.W   R8, R5
+        JGE     ??FFT_4
+//   78             for (int upper_leg = j; upper_leg < num; upper_leg += (2 * leg_diff)) {
+        MOV.W   R5, R9
+??FFT_0:
+        CMP.W   R7, R9
+        JGE     ??FFT_5
+//   79                 lower_leg = upper_leg + leg_diff;
+        MOV.W   R9, R15
+        ADD.W   R8, R15
+        MOV.W   R15, 0(SP)
+//   80 
+//   81                 addComplex(&topData, (data + upper_leg), (data + lower_leg));
+        MOV.W   @SP, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R13
+        MOVA    R11, R14
+        ADDA    R13, R14
+        MOV.W   R9, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R12
+        MOVA    R11, R13
+        ADDA    R12, R13
+        MOVA    SP, R12
+        ADDA    #0xa, R12
+          CFI FunCall addComplex
+        CALLA   #addComplex
+//   82                 subComplex(&lowData, (data + upper_leg), (data + lower_leg));
+        MOV.W   @SP, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R13
+        MOVA    R11, R14
+        ADDA    R13, R14
+        MOV.W   R9, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R12
+        MOVA    R11, R13
+        ADDA    R12, R13
+        MOVA    SP, R12
+        ADDA    #0x12, R12
+          CFI FunCall subComplex
+        CALLA   #subComplex
+//   83                 dataIndex.real = (factor + index)->real;
+        MOVA    0x1c(SP), R15
+        MOV.W   R10, R14
+        RLAM.A  #0x4, R14
+        RRAM.A  #0x4, R14
+        RLAM.A  #0x3, R14
+        ADDA    R15, R14
+        MOV.W   @R14, 0x2(SP)
+        MOV.W   0x2(R14), 0x4(SP)
+//   84                 dataIndex.imag = (factor + index)->imag;
+        MOVA    0x1c(SP), R14
+        MOV.W   R10, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R13
+        ADDA    R13, R14
+        MOV.W   0x4(R14), 0x6(SP)
+        MOV.W   0x6(R14), 0x8(SP)
+//   85                 mulComplex((data + lower_leg), &lowData, &dataIndex);
+        MOVA    SP, R14
+        ADDA    #0x2, R14
+        MOVA    SP, R13
+        ADDA    #0x12, R13
+        MOV.W   @SP, R12
+        RLAM.A  #0x4, R12
+        RRAM.A  #0x4, R12
+        RLAM.A  #0x3, R12
+        MOVA    R12, R15
+        MOVA    R11, R12
+        ADDA    R15, R12
+          CFI FunCall mulComplex
+        CALLA   #mulComplex
+//   86                 (data + upper_leg)->real = topData.real;
+        MOV.W   R9, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        ADDA    R11, R15
+        MOV.W   0xa(SP), 0(R15)
+        MOV.W   0xc(SP), 0x2(R15)
+//   87                 (data + upper_leg)->imag = topData.imag;
+        MOV.W   R9, R15
+        RLAM.A  #0x4, R15
+        RRAM.A  #0x4, R15
+        RLAM.A  #0x3, R15
+        MOVA    R15, R14
+        MOVA    R11, R15
+        ADDA    R14, R15
+        MOV.W   0xe(SP), 0x4(R15)
+        MOV.W   0x10(SP), 0x6(R15)
+//   88             }
+        MOV.W   R8, R15
+        RLA.W   R15
+        ADD.W   R15, R9
+        JMP     ??FFT_0
+//   89             index += step;
+??FFT_5:
+        ADD.W   R6, R10
+//   90         }
+        ADD.W   #0x1, R5
+        JMP     ??FFT_1
+//   91 
+//   92         leg_diff >>= 1;
+??FFT_4:
+        RRA.W   R8
+//   93         step *= 2;
+        RLA.W   R6
+//   94     }
+        ADD.W   #0x1, R4
+        JMP     ??FFT_2
+//   95     inReverse(data, num);
+??FFT_3:
+        MOV.W   R7, R13
+        MOVA    R11, R12
+          CFI FunCall inReverse
+        CALLA   #inReverse
+//   96 }
+        ADDA    #0x20, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 834 bytes in segment CODE
+// 
+// 834 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

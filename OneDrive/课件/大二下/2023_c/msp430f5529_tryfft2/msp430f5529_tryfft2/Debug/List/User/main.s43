@@ -1,0 +1,1628 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V8.10.2.1069/W32 for MSP430         05/Aug/2023  18:02:45
+// Copyright 1996-2022 IAR Systems AB.
+// Evaluation license - IAR Embedded Workbench for MSP430, Evaluation version 8.10
+//
+//    __rt_version  =  3
+//    __double_size =  32
+//    __reg_r4      =  free
+//    __reg_r5      =  free
+//    __pic         =  no
+//    __core        =  430X
+//    __data_model  =  large
+//    __code_model  =  large
+//    Source file   =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\main.c
+//    Command line  =  
+//        -f
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\User\main.r43.rsp
+//        (C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\main.c
+//        -D DEBUG -D RAM_VECTOR -lA
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\User
+//        -o
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\User
+//        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        -D__MSP430F5529__ -e --double=32 --dlib_config "C:\Program Files\IAR
+//        Systems\Embedded Workbench 9.1\430\lib\dlib\dl430xllff.h" -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\ -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_config\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\srcUSB\USB_API\USB_CDC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_HID_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Drivers\src\USB\USB_API\USB_MSC_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\delay\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\18b20\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\KEY\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LED\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\12864\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\oled\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\mpu6050\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nokia5110\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LQ_1.8_TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\LCD_API\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\2.2TFT\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\HardWare\nrf24l01\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\inc\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\System\src\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\USER\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\
+//        -I
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Lib\FatFs\option\
+//        --core=430X --data_model=large -On --multiplier=32
+//        --hw_workaround=CPU40 --hw_workaround=nop_after_lpm
+//        --code_model=large) --dependencies=n
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\Obj\User\main.r43.iar_deps
+//    Locale        =  Chinese (Simplified)_CHN.936
+//    List file     =  
+//        C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\Debug\List\User\main.s43
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__code_model", "large"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN _Cast32uto32f
+        EXTERN ?DivMod16s
+        EXTERN _Cast32sto32f
+        EXTERN _Add32f
+        EXTERN _Mul32f
+        EXTERN _Div32f
+        EXTERN _Sub32f
+        EXTERN ?FLT_LT
+        EXTERN ?FLT_GE
+        EXTERN ?cstart_init_copy20
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC C_Value
+        PUBLIC D_Value
+        PUBLIC KEY1_EventHandler
+        PUBLIC L_Value
+        PUBLIC Phase
+        PUBLIC Q_Value
+        PUBLIC R_Value
+        PUBLIC Sin_Z
+        PUBLIC TIMER1_A0_IRQ_Handler
+        PUBLIC V_Phase
+        PUBLIC Vr
+        PUBLIC Vr_Value
+        PUBLIC VrdVx
+        PUBLIC Vx_Value
+        PUBLIC Vz
+        PUBLIC X_Value
+        PUBLIC Z_Value
+        PUBLIC ad1
+        PUBLIC ad3
+        PUBLIC buffer_P
+        PUBLIC buffer_V
+        PUBLIC count
+        PUBLIC flag
+        PUBLIC flag_LC
+        PUBLIC fre
+        PUBLIC main
+        PUBLIC max1
+        PUBLIC max2
+        PUBLIC min1
+        PUBLIC min2
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC or(load(2, DATA, add(CFA, literal(-2))), lshift(and(load(2, DATA, add(CFA, literal(-4))), 61440), 4))
+          CFI SR Frame(CFA, -4)
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon1
+        
+        
+          CFI Common cfiCommon2 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L Undefined
+          CFI R4H Undefined
+          CFI R4 Undefined
+          CFI R5L Undefined
+          CFI R5H Undefined
+          CFI R5 Undefined
+          CFI R6L Undefined
+          CFI R6H Undefined
+          CFI R6 Undefined
+          CFI R7L Undefined
+          CFI R7H Undefined
+          CFI R7 Undefined
+          CFI R8L Undefined
+          CFI R8H Undefined
+          CFI R8 Undefined
+          CFI R9L Undefined
+          CFI R9H Undefined
+          CFI R9 Undefined
+          CFI R10L Undefined
+          CFI R10H Undefined
+          CFI R10 Undefined
+          CFI R11L Undefined
+          CFI R11H Undefined
+          CFI R11 Undefined
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon2
+        
+        EXTERN KEY_20msTimingProcess
+        EXTERN OLED_Init
+        EXTERN ADC_Init
+        EXTERN ADC_GetChanelMemoryAddr
+        EXTERN DMA_Init
+        EXTERN GPIO_MultiBits_Init
+        EXTERN LED_Init
+        EXTERN KEY_Init
+        EXTERN Set_Vector_Handler
+        EXTERN TIMER_Interval_Us
+        EXTERN TIMER_ITConfig
+        EXTERN AD9850_Init
+        EXTERN AD9850_Write
+        EXTERN ADC_StartConv
+        EXTERN DMA_GetITStatus
+        EXTERN ADC_StopConv
+        EXTERN DMA_ClearITPendingBit
+        EXTERN OLED_Clear
+        EXTERN OLED_DispStringAt
+        EXTERN fmax
+        EXTERN fmin
+        EXTERN cos
+        EXTERN sqrt
+        EXTERN sin
+        EXTERN asin
+        EXTERN OLED_DispFolatAt
+        EXTERN LED_SetStatus
+
+// C:\Users\86137\Desktop\msp430f5529_tryfft2\msp430f5529_tryfft2\User\main.c
+//    1 /*        
+//    2 头文件声明        
+//    3 */
+//    4 #include "msp430f5529_system.h"
+//    5 #include "msp430f5529_clock.h"
+//    6 #include "msp430f5529_watchdog.h"
+//    7 #include "msp430f5529_gpio.h"
+//    8 #include "msp430f5529_timer.h"
+//    9 #include "msp430f5529_adc.h"
+//   10 #include "msp430f5529_uart.h"
+//   11 #include "msp430f5529_i2c.h"
+//   12 #include "msp430f5529_spi.h"
+//   13 #include "msp430f5529_flash.h"
+//   14 #include "msp430f5529_rtc.h"
+//   15 #include "msp430f5529_dma.h"
+//   16 #include "msp430f5529_compater.h"
+//   17 #include "msp430f5529_lpm.h"
+//   18 #include "msp430f5529_nmi.h"
+//   19 #include "msp430f5529_remap.h"
+//   20 #include "msp430f5529_it.h"
+//   21 #include "msp430f5529_vectors.h"
+//   22 #include "KEY.h"
+//   23 #include "LED.h"
+//   24 #include "LCD_API.h"
+//   25 #include "OLED.h"
+//   26 #include "math.h"
+//   27 #include "PID.h"
+//   28 #include "delay.h"
+//   29 #include "fft.h"
+//   30 #include "ad9850.h"
+//   31 /*        
+//   32 定义变量常量        
+//   33 */
+//   34 #define Vx 225//输入电压
+//   35 #define Rr 198.8//标准电阻
+//   36 #define PI 3.141592653589793238
+//   37 #define  Fre1 40000
+//   38 #define Fre2 500000
+//   39 #define Vx2 50625
+//   40 
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   41 int ad1[100];
+ad1:
+        DS8 200
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   42 int ad3[100];
+ad3:
+        DS8 200
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   43 int max1;
+max1:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   44 int min1;
+min1:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   45 int max2;
+max2:
+        DS8 2
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   46 int min2;
+min2:
+        DS8 2
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+//   47 u32 fre=Fre2; //设定频率
+fre:
+        DS8 4
+        REQUIRE `?<Initializer for fre>`
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+//   48 int flag_LC=1;//测量电感还是电容
+flag_LC:
+        DS8 2
+        REQUIRE `?<Initializer for flag_LC>`
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+//   49 int flag=1;//暂停功能标志
+flag:
+        DS8 2
+        REQUIRE `?<Initializer for flag>`
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   50 float Phase;//相位
+Phase:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   51 float V_Phase;//相位端电压
+V_Phase:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   52 float Vr;//电阻端电压
+Vr:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   53 float VrdVx;
+VrdVx:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   54 float R_Value;
+R_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   55 float X_Value;
+X_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   56 float C_Value;
+C_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   57 float L_Value;
+L_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   58 float D_Value;
+D_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   59 float Q_Value;
+Q_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   60 int count=0;
+count:
+        DS8 2
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+//   61 float buffer_V=1000;
+buffer_V:
+        DS8 4
+        REQUIRE `?<Initializer for buffer_V>`
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   62 float buffer_P=0;
+buffer_P:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   63 double Z_Value;
+Z_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   64 double Sin_Z;
+Sin_Z:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   65 double Vz;
+Vz:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   66 double Vx_Value;
+Vx_Value:
+        DS8 4
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   67 double Vr_Value;
+Vr_Value:
+        DS8 4
+//   68 
+
+        RSEG ISR_CODE:CODE:REORDER:NOROOT(1)
+        CALL_GRAPH_ROOT TIMER1_A0_IRQ_Handler, "interrupt"
+//   69 __interrupt void TIMER1_A0_IRQ_Handler()
+TIMER1_A0_IRQ_Handler:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function TIMER1_A0_IRQ_Handler
+//   70 {
+        PUSHM.A #0x4, R15
+          CFI R12L Frame(CFA, -20)
+          CFI R12H Frame(CFA, -18)
+          CFI R13L Frame(CFA, -16)
+          CFI R13H Frame(CFA, -14)
+          CFI R14L Frame(CFA, -12)
+          CFI R14H Frame(CFA, -10)
+          CFI R15L Frame(CFA, -8)
+          CFI R15H Frame(CFA, -6)
+          CFI CFA SP+20
+//   71   KEY_20msTimingProcess(KEY1);
+        MOV.B   #0x0, R12
+          CFI FunCall KEY_20msTimingProcess
+        CALLA   #KEY_20msTimingProcess
+//   72   //KEY_20msTimingProcess(KEY2);
+//   73 }
+        POPM.A  #0x4, R15
+          CFI R12H SameValue
+          CFI R13H SameValue
+          CFI R14H SameValue
+          CFI R15H SameValue
+          CFI R12L SameValue
+          CFI R13L SameValue
+          CFI R14L SameValue
+          CFI R15L SameValue
+          CFI CFA SP+4
+        RETI
+          CFI EndBlock cfiBlock0
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   74 void KEY1_EventHandler(KEY_EVENT event)
+KEY1_EventHandler:
+          CFI Block cfiBlock1 Using cfiCommon1
+          CFI Function KEY1_EventHandler
+          CFI NoCalls
+//   75 {
+//   76   switch(event)
+        MOV.B   R12, R14
+        SUB.B   #0x1, R14
+        JEQ     ??KEY1_EventHandler_2
+        SUB.B   #0x1, R14
+        JEQ     ??KEY1_EventHandler_3
+        SUB.B   #0x1, R14
+        JEQ     ??KEY1_EventHandler_1
+        RETA
+//   77   {
+//   78   case KEY_CLICK:
+//   79     flag=0;
+??KEY1_EventHandler_2:
+        MOVX.W  #0x0, &flag
+//   80     //LED_SetStatus(LED1, TRUE);                                        //设置LED状态
+//   81     //LED_SetStatus(LED2, FALSE);                                        //设置LED状态
+//   82   break;
+        RETA
+//   83   case KEY_DOUBLE_CLICK:
+//   84     flag_LC = !flag_LC;
+??KEY1_EventHandler_3:
+        CMPX.W  #0x0, &flag_LC
+        JNE     ??KEY1_EventHandler_4
+        MOVX.W  #0x1, &flag_LC
+        RETA
+??KEY1_EventHandler_4:
+        MOVX.W  #0x0, &flag_LC
+//   85    break;
+//   86   case KEY_LONG_CLICK:
+//   87     //LED_SetStatus(LED1, TRUE);                                        //设置LED状态
+//   88     //LED_SetStatus(LED2, TRUE);                                        //设置LED状态
+//   89     break;
+//   90   default:
+//   91     break;
+//   92   }
+//   93 }
+??KEY1_EventHandler_1:
+        RETA
+          CFI EndBlock cfiBlock1
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+//   94 void main()
+main:
+          CFI Block cfiBlock2 Using cfiCommon2
+          CFI Function main
+//   95 {
+//   96   DisableInterrupts();            //禁止总中断
+        DINT
+        NOP
+//   97   OLED_Init();
+          CFI FunCall OLED_Init
+        CALLA   #OLED_Init
+//   98 
+//   99   ADC_Init(ADC_CH1+ADC_CH3,ADC_VREF_3_3V,ADC_10bit);       //初始化通道,P6.1,P6.3
+        MOV.B   #0x1, R14
+        MOV.B   #0x2, R13
+        MOV.W   #0xa, R12
+          CFI FunCall ADC_Init
+        CALLA   #ADC_Init
+//  100   DMA_Init(DMA_CH1,ADC_GetChanelMemoryAddr(ADC_CH1), &ad1,DMATSEL_ADC12IFG,100, DMA_SRCAddr_KeepOn|DMA_DSTAddr_Increase|DMA_WORD|DMA_Repeated_Single|DMA_Edge);
+        MOV.W   #0x2, R12
+          CFI FunCall ADC_GetChanelMemoryAddr
+        CALLA   #ADC_GetChanelMemoryAddr
+        PUSH.W  #0x4c00
+          CFI CFA SP+6
+        PUSH.W  #0x64
+          CFI CFA SP+8
+        MOV.B   #0x18, R15
+        MOVA    #ad1, R14
+        MOVA    R12, R13
+        MOV.B   #0x1, R12
+          CFI FunCall DMA_Init
+        CALLA   #DMA_Init
+//  101   //DMA_ITConfig (DMA_CH1,ENABLE); 
+//  102   DMA_Init(DMA_CH2,ADC_GetChanelMemoryAddr(ADC_CH3), &ad3,DMATSEL_ADC12IFG,100, DMA_SRCAddr_KeepOn|DMA_DSTAddr_Increase|DMA_WORD|DMA_Repeated_Single|DMA_Edge);
+        MOV.W   #0x8, R12
+          CFI FunCall ADC_GetChanelMemoryAddr
+        CALLA   #ADC_GetChanelMemoryAddr
+        PUSH.W  #0x4c00
+          CFI CFA SP+10
+        PUSH.W  #0x64
+          CFI CFA SP+12
+        MOV.B   #0x18, R15
+        MOVA    #ad3, R14
+        MOVA    R12, R13
+        MOV.B   #0x2, R12
+          CFI FunCall DMA_Init
+        CALLA   #DMA_Init
+//  103   //DMA_ITConfig (DMA_CH2,ENABLE);
+//  104   
+//  105   
+//  106   //DMA_SoftwareTrigger(DMA_CH1);
+//  107   //for(int i = 0;i<100;i++)
+//  108   //{
+//  109     //printf("%d %f\n",i,ad1[i]*3.3/1023);
+//  110   //}
+//  111   GPIO_MultiBits_Init(P2,BIT5,GPO|HDS);   
+        MOV.W   #0xa, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x1, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  112   GPIO_MultiBits_Init(P2,BIT4,GPO|HDS);    
+        MOV.W   #0xa, R14
+        MOV.W   #0x10, R13
+        MOV.B   #0x1, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  113   GPIO_MultiBits_Init(P2,BIT3,GPO|HDS);  
+        MOV.W   #0xa, R14
+        MOV.W   #0x8, R13
+        MOV.B   #0x1, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  114   GPIO_MultiBits_Init(P2,BIT2,GPO|HDS); 
+        MOV.W   #0xa, R14
+        MOV.W   #0x4, R13
+        MOV.B   #0x1, R12
+          CFI FunCall GPIO_MultiBits_Init
+        CALLA   #GPIO_MultiBits_Init
+//  115   LED_Init(LED_ALL); 
+        MOV.B   #0x2, R12
+          CFI FunCall LED_Init
+        CALLA   #LED_Init
+//  116   KEY_Init(KEY1,KEY1_EventHandler); 
+        MOVA    #KEY1_EventHandler, R13
+        MOV.B   #0x0, R12
+          CFI FunCall KEY_Init
+        CALLA   #KEY_Init
+//  117   Set_Vector_Handler(VECTOR_TIMER_A1_CCR0, TIMER1_A0_IRQ_Handler);   //设置定时器TA1的中断服务程序为：TIMER1_A0_IRQ_Handler
+        MOVA    #TIMER1_A0_IRQ_Handler, R13
+        MOV.B   #0x31, R12
+          CFI FunCall Set_Vector_Handler
+        CALLA   #Set_Vector_Handler
+//  118   TIMER_Interval_Ms(TIMER_A1, 20);    //设置TA1为定时中断，中断时间为500Ms
+        MOV.W   #0x4e20, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_Interval_Us
+        CALLA   #TIMER_Interval_Us
+//  119   TIMER_ITConfig (TIMER_A1, TIMER_CCR0_IRQn, ENABLE);            //使能TIMER的某一个中断
+        MOV.B   #0x1, R14
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+          CFI FunCall TIMER_ITConfig
+        CALLA   #TIMER_ITConfig
+//  120   AD9850_Init();
+          CFI FunCall AD9850_Init
+        CALLA   #AD9850_Init
+        NOP
+//  121   
+//  122   EnableInterrupts();
+        EINT
+        ADDA    #0x8, SP
+          CFI CFA SP+4
+//  123   while(1)
+//  124   {  
+//  125     if(flag_LC)
+??main_2:
+        CMPX.W  #0x0, &flag_LC
+        JEQ     ??main_9
+//  126     {
+//  127       fre=Fre1;
+        MOVX.W  #0x9c40, &fre
+        MOVX.W  #0x0, &fre + 2
+//  128       AD9850_Write(0x00,(double)fre);
+        MOVX.W  &fre, R12
+        MOVX.W  &fre + 2, R13
+          CFI FunCall _Cast32uto32f
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.B   #0x0, R12
+          CFI FunCall AD9850_Write
+        CALLA   #AD9850_Write
+        JMP     ??main_4
+//  129       //DELAY_MS(1);
+//  130     }
+//  131     else
+//  132     {
+//  133       fre=Fre2;
+??main_9:
+        MOVX.W  #0xa120, &fre
+        MOVX.W  #0x7, &fre + 2
+//  134       AD9850_Write(0x00,(double)fre);
+        MOVX.W  &fre, R12
+        MOVX.W  &fre + 2, R13
+          CFI FunCall _Cast32uto32f
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.B   #0x0, R12
+          CFI FunCall AD9850_Write
+        CALLA   #AD9850_Write
+//  135       //DELAY_MS(1);
+//  136     }
+//  137     
+//  138     ADC_StartConv();
+??main_4:
+          CFI FunCall ADC_StartConv
+        CALLA   #ADC_StartConv
+//  139     //DMA_SoftwareTrigger(DMA_CH1);
+//  140     while(!DMA_GetITStatus(DMA_CH1)&&!DMA_GetITStatus(DMA_CH2));
+??main_0:
+        MOV.B   #0x1, R12
+          CFI FunCall DMA_GetITStatus
+        CALLA   #DMA_GetITStatus
+        CMP.B   #0x0, R12
+        JNE     ??main_10
+        MOV.B   #0x2, R12
+          CFI FunCall DMA_GetITStatus
+        CALLA   #DMA_GetITStatus
+        CMP.B   #0x0, R12
+        JEQ     ??main_0
+//  141     ADC_StopConv();
+??main_10:
+          CFI FunCall ADC_StopConv
+        CALLA   #ADC_StopConv
+//  142     DMA_ClearITPendingBit(DMA_CH1);  
+        MOV.B   #0x1, R12
+          CFI FunCall DMA_ClearITPendingBit
+        CALLA   #DMA_ClearITPendingBit
+//  143     DMA_ClearITPendingBit(DMA_CH2);
+        MOV.B   #0x2, R12
+          CFI FunCall DMA_ClearITPendingBit
+        CALLA   #DMA_ClearITPendingBit
+//  144     max1 = min1 =max2=min2=0;
+        MOV.W   #0x0, R15
+        MOVX.W  R15, &min2
+        MOVX.W  R15, &max2
+        MOVX.W  R15, &min1
+        MOVX.W  R15, &max1
+//  145     for(int i = 0;i<100;i++)
+        MOV.W   #0x0, R14
+??main_1:
+        CMP.W   #0x64, R14
+        JGE     ??main_11
+//  146     {
+//  147       if(ad1[i]>ad1[max1])
+        MOVX.W  &max1, R15
+        ADDA    R15, R15
+        MOV.W   R14, R11
+        ADDA    R11, R11
+        CMPX.W  ad1(R11), ad1(R15)
+        JGE     ??main_12
+//  148       {
+//  149         max1 = i;
+        MOVX.W  R14, &max1
+        JMP     ??main_5
+//  150       }
+//  151       else if(ad1[i]<ad1[min1])
+??main_12:
+        MOV.W   R14, R11
+        ADDA    R11, R11
+        MOVX.W  &min1, R15
+        ADDA    R15, R15
+        CMPX.W  ad1(R15), ad1(R11)
+        JGE     ??main_5
+//  152       {
+//  153         min1 = i;
+        MOVX.W  R14, &min1
+//  154       }
+//  155       if(ad3[i]>ad3[max2])
+??main_5:
+        MOVX.W  &max2, R15
+        ADDA    R15, R15
+        MOV.W   R14, R11
+        ADDA    R11, R11
+        CMPX.W  ad3(R11), ad3(R15)
+        JGE     ??main_13
+//  156       {
+//  157         max2 = i;
+        MOVX.W  R14, &max2
+        JMP     ??main_6
+//  158       }
+//  159       else if(ad3[i]<ad3[min2])
+??main_13:
+        MOV.W   R14, R11
+        ADDA    R11, R11
+        MOVX.W  &min2, R15
+        ADDA    R15, R15
+        CMPX.W  ad3(R15), ad3(R11)
+        JGE     ??main_6
+//  160       {
+//  161         min2 = i;
+        MOVX.W  R14, &min2
+//  162       }
+//  163     }
+??main_6:
+        ADD.W   #0x1, R14
+        JMP     ??main_1
+//  164     //OLED_PrintfAt(FONT_ASCII_6X8,0,0,"AD phase: %f\n ",(ad1[max1]+ad1[min1])/2);         //在指定位置打印 
+//  165     //OLED_PrintfAt(FONT_ASCII_6X8,10,0,"AD range: %f\n ",(ad3[max2]+ad3[min2])/2);         //在指定位置打印 
+//  166     //for(int i=0;i<1023;i++)
+//  167     //printf("%d %f %f\n",i,ad1[i]*3.3/1024,ad3[i]*3.3/1024);
+//  168     OLED_Clear();//清屏
+??main_11:
+          CFI FunCall OLED_Clear
+        CALLA   #OLED_Clear
+//  169     V_Phase = (ad1[max1]+ad1[min1])/2;
+        MOVX.W  &max1, R15
+        ADDA    R15, R15
+        MOVX.W  ad1(R15), R12
+        MOVX.W  &min1, R15
+        ADDA    R15, R15
+        ADDX.W  ad1(R15), R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  R12, &V_Phase
+        MOVX.W  R13, &V_Phase + 2
+//  170     Vr=(ad3[max2]+ad3[min2])/2;
+        MOVX.W  &max2, R15
+        ADDA    R15, R15
+        MOVX.W  ad3(R15), R12
+        MOVX.W  &min2, R15
+        ADDA    R15, R15
+        ADDX.W  ad3(R15), R12
+        MOV.W   #0x2, R14
+          CFI FunCall ?DivMod16s
+        CALLA   #?DivMod16s
+        MOV.W   R12, R13
+        RLA.W   R13
+        SUBC.W  R13, R13
+        XOR.W   #0xffff, R13
+          CFI FunCall _Cast32sto32f
+        CALLA   #_Cast32sto32f
+        MOVX.W  R12, &Vr
+        MOVX.W  R13, &Vr + 2
+//  171     /*
+//  172     Phase=(-0.2981*V_Phase + 175.54)/180*PI;
+//  173     VrdVx=(9.2528*Vx - 6.6667)/(9.2528*Vr - 6.6667);
+//  174     R_Value=VrdVx*Rr*cos(Phase)-Rr;
+//  175     X_Value=VrdVx*Rr*sin(Phase);
+//  176     OLED_DispFolatAt(FONT_ASCII_6X8,0,0,(ad1[max1]+ad1[min1])/2,6);
+//  177     //OLED_DispFolatAt(FONT_ASCII_6X8,2,0,(ad3[max2]+ad3[min2])/2,6);
+//  178     
+//  179     if(flag_LC)
+//  180     {
+//  181       OLED_DispStringAt(FONT_ASCII_6X8,1,0,"capacitor measure");
+//  182       OLED_DispStringAt(FONT_ASCII_6X8,2,0,"C (nF) :");
+//  183       C_Value=1000000000/2/PI/Fre1/X_Value;
+//  184       OLED_DispFolatAt(FONT_ASCII_6X8,3,0,C_Value,6);
+//  185       OLED_DispStringAt(FONT_ASCII_6X8,4,0,"D  :");
+//  186       D_Value=R_Value/X_Value;
+//  187       OLED_DispFolatAt(FONT_ASCII_6X8,5,0,D_Value,6);
+//  188       LED_SetStatus(LED1, TRUE);                                        //设置LED状态
+//  189       LED_SetStatus(LED2, TRUE);                                        //设置LED状态
+//  190  
+//  191       
+//  192       
+//  193     }
+//  194     else
+//  195     {
+//  196       OLED_DispStringAt(FONT_ASCII_6X8,1,0,"inductance measure");
+//  197       OLED_DispStringAt(FONT_ASCII_6X8,2,0,"L (uH) :");
+//  198       L_Value=1000000*X_Value/2/PI/Fre2;
+//  199       OLED_DispFolatAt(FONT_ASCII_6X8,3,0,L_Value,6);
+//  200       OLED_DispStringAt(FONT_ASCII_6X8,4,0,"Q  :");
+//  201       Q_Value=X_Value/R_Value;
+//  202       OLED_DispFolatAt(FONT_ASCII_6X8,5,0,Q_Value,6);
+//  203       LED_SetStatus(LED1, FALSE);                                        //设置LED状态
+//  204       LED_SetStatus(LED2, FALSE);                                        //设置LED状态 
+//  205     }
+//  206     */
+//  207     OLED_DispStringAt(FONT_ASCII_6X8,3,58,"texting...");
+        MOVA    #`?<Constant "texting...">`, R15
+        MOV.B   #0x3a, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  208     //暂停程序
+//  209     
+//  210     if(count<30)
+        CMPX.W  #0x1e, &count
+        JGE     ??main_14
+//  211     {
+//  212       count++;//可以在这里对测量的数据进行处理
+        ADDX.W  #0x1, &count
+//  213       //相位电压取最大值
+//  214       buffer_P=fmax(buffer_P,V_Phase);
+        MOVX.W  &V_Phase, R14
+        MOVX.W  &V_Phase + 2, R15
+        MOVX.W  &buffer_P, R12
+        MOVX.W  &buffer_P + 2, R13
+          CFI FunCall fmax
+        CALLA   #fmax
+        MOVX.W  R12, &buffer_P
+        MOVX.W  R13, &buffer_P + 2
+//  215       //幅度电压取最大值
+//  216       buffer_V=fmin(buffer_V,Vr);
+        MOVX.W  &Vr, R14
+        MOVX.W  &Vr + 2, R15
+        MOVX.W  &buffer_V, R12
+        MOVX.W  &buffer_V + 2, R13
+          CFI FunCall fmin
+        CALLA   #fmin
+        MOVX.W  R12, &buffer_V
+        MOVX.W  R13, &buffer_V + 2
+        JMP     ??main_2
+//  217     }
+//  218     else
+//  219     {
+//  220       OLED_Clear();
+??main_14:
+          CFI FunCall OLED_Clear
+        CALLA   #OLED_Clear
+//  221       buffer_P+=6;
+        MOVX.W  &buffer_P, R12
+        MOVX.W  &buffer_P + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x40c0, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &buffer_P
+        MOVX.W  R13, &buffer_P + 2
+//  222       buffer_V+=6;
+        MOVX.W  &buffer_V, R12
+        MOVX.W  &buffer_V + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x40c0, R15
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &buffer_V
+        MOVX.W  R13, &buffer_V + 2
+//  223       Phase=(-0.2981*buffer_P + 175.54)/180*PI;
+        MOVX.W  &buffer_P, R12
+        MOVX.W  &buffer_P + 2, R13
+        MOV.W   #0xa090, R14
+        MOV.W   #0xbe98, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0x8a3d, R12
+        MOV.W   #0x432f, R13
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4334, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0xfdb, R12
+        MOV.W   #0x4049, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &Phase
+        MOVX.W  R13, &Phase + 2
+//  224       Vr=buffer_V;
+        MOVX.W  &buffer_V, &Vr
+        MOVX.W  &buffer_V + 2, &Vr + 2
+//  225       Vx_Value=9.2528*Vx - 6.6667;
+        MOVX.W  #0xb369, &Vx_Value
+        MOVX.W  #0x4501, &Vx_Value + 2
+//  226       Vr_Value=9.2528*buffer_V - 6.6667;
+        MOVX.W  &buffer_V, R12
+        MOVX.W  &buffer_V + 2, R13
+        MOV.W   #0xb78, R14
+        MOV.W   #0x4114, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0x559b, R12
+        MOV.W   #0xc0d5, R13
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &Vr_Value
+        MOVX.W  R13, &Vr_Value + 2
+//  227       
+//  228     //VrdVx=(9.2528*Vx - 6.6667)/(9.2528*buffer_V - 6.6667);
+//  229     /*R_Value=VrdVx*Rr*cos(Phase)-Rr;
+//  230     X_Value=VrdVx*Rr*sin(Phase);*/
+//  231       Vz=sqrt(Vx_Value*Vx_Value+Vr_Value*Vr_Value-2*Vr_Value*Vx_Value*cos(Phase));
+        MOVX.W  &Phase, R12
+        MOVX.W  &Phase + 2, R13
+          CFI FunCall cos
+        CALLA   #cos
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &Vx_Value, R12
+        MOVX.W  &Vx_Value + 2, R13
+        MOVX.W  &Vx_Value, R14
+        MOVX.W  &Vx_Value + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOVX.W  &Vr_Value, R12
+        MOVX.W  &Vr_Value + 2, R13
+        MOVX.W  &Vr_Value, R14
+        MOVX.W  &Vr_Value + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOVX.W  &Vr_Value, R12
+        MOVX.W  &Vr_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4000, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOVX.W  &Vx_Value, R12
+        MOVX.W  &Vx_Value + 2, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+          CFI FunCall _Sub32f
+        CALLA   #_Sub32f
+          CFI FunCall sqrt
+        CALLA   #sqrt
+        MOVX.W  R12, &Vz
+        MOVX.W  R13, &Vz + 2
+//  232       Z_Value=Rr*Vz/Vr_Value;
+        MOVX.W  &Vz, R12
+        MOVX.W  &Vz + 2, R13
+        MOV.W   #0xcccd, R14
+        MOV.W   #0x4346, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  &Vr_Value, R14
+        MOVX.W  &Vr_Value + 2, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOVX.W  R12, &Z_Value
+        MOVX.W  R13, &Z_Value + 2
+//  233       Sin_Z=sin(Phase)*Vx_Value/Vz;
+        MOVX.W  &Phase, R12
+        MOVX.W  &Phase + 2, R13
+          CFI FunCall sin
+        CALLA   #sin
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOVX.W  &Vx_Value, R12
+        MOVX.W  &Vx_Value + 2, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  &Vz, R14
+        MOVX.W  &Vz + 2, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOVX.W  R12, &Sin_Z
+        MOVX.W  R13, &Sin_Z + 2
+//  234       X_Value=Z_Value*Sin_Z;
+        MOVX.W  &Z_Value, R12
+        MOVX.W  &Z_Value + 2, R13
+        MOVX.W  &Sin_Z, R14
+        MOVX.W  &Sin_Z + 2, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &X_Value
+        MOVX.W  R13, &X_Value + 2
+//  235       R_Value=Z_Value*cos(asin(Sin_Z));
+        MOVX.W  &Sin_Z, R12
+        MOVX.W  &Sin_Z + 2, R13
+          CFI FunCall asin
+        CALLA   #asin
+          CFI FunCall cos
+        CALLA   #cos
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOVX.W  &Z_Value, R12
+        MOVX.W  &Z_Value + 2, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &R_Value
+        MOVX.W  R13, &R_Value + 2
+//  236       
+//  237     //OLED_DispFolatAt(FONT_ASCII_6X8,0,0,(ad1[max1]+ad1[min1])/2,6);
+//  238     //OLED_DispFolatAt(FONT_ASCII_6X8,6,0,(ad3[max2]+ad3[min2])/2,6);
+//  239     
+//  240     if(flag_LC)
+        CMPX.W  #0x0, &flag_LC
+        JEQ     ??main_15
+//  241     {
+//  242       OLED_DispStringAt(FONT_ASCII_6X8,1,0,"capacitor measure");
+        MOVA    #`?<Constant "capacitor measure">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  243       OLED_DispStringAt(FONT_ASCII_6X8,2,0,"C (nF) :");
+        MOVA    #`?<Constant "C (nF) :">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  244       C_Value=1000000000/2/PI/Fre1/X_Value*0.89;
+        MOV.W   #0xadfa, R12
+        MOV.W   #0x4578, R13
+        MOVX.W  &X_Value, R14
+        MOVX.W  &X_Value + 2, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0xd70a, R12
+        MOV.W   #0x3f63, R13
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &C_Value
+        MOVX.W  R13, &C_Value + 2
+//  245       if(C_Value<7.5&&C_Value>4)
+        MOVX.W  &C_Value, R12
+        MOVX.W  &C_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x40f0, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_16
+        MOVX.W  &C_Value, R12
+        MOVX.W  &C_Value + 2, R13
+        MOV.W   #0x1, R14
+        MOV.W   #0x4080, R15
+          CFI FunCall ?FLT_GE
+        CALLA   #?FLT_GE
+        JNC     ??main_16
+//  246       {
+//  247        C_Value = 1.1158*C_Value - 1.3112;
+        MOVX.W  &C_Value, R12
+        MOVX.W  &C_Value + 2, R13
+        MOV.W   #0xd289, R14
+        MOV.W   #0x3f8e, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0xd567, R12
+        MOV.W   #0xbfa7, R13
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &C_Value
+        MOVX.W  R13, &C_Value + 2
+//  248       }
+//  249       if(C_Value<3.5)
+??main_16:
+        MOVX.W  &C_Value, R12
+        MOVX.W  &C_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4060, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_17
+//  250       {
+//  251         C_Value=0.8591*C_Value - 0.6144;
+        MOVX.W  &C_Value, R12
+        MOVX.W  &C_Value + 2, R13
+        MOV.W   #0xedfa, R14
+        MOV.W   #0x3f5b, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   #0x4952, R12
+        MOV.W   #0xbf1d, R13
+          CFI FunCall _Add32f
+        CALLA   #_Add32f
+        MOVX.W  R12, &C_Value
+        MOVX.W  R13, &C_Value + 2
+//  252       }
+//  253       OLED_DispFolatAt(FONT_ASCII_6X8,3,0,C_Value,6);
+??main_17:
+        PUSHX.W &C_Value + 2
+          CFI CFA SP+6
+        PUSHX.W &C_Value
+          CFI CFA SP+8
+        MOV.B   #0x6, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispFolatAt
+        CALLA   #OLED_DispFolatAt
+//  254       //OLED_DispFolatAt(FONT_ASCII_6X8,4,0,Vz,6);
+//  255       OLED_DispStringAt(FONT_ASCII_6X8,4,0,"D  :");
+        MOVA    #`?<Constant "D  :">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  256       D_Value=R_Value/X_Value;
+        MOVX.W  &R_Value, R12
+        MOVX.W  &R_Value + 2, R13
+        MOVX.W  &X_Value, R14
+        MOVX.W  &X_Value + 2, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOVX.W  R12, &D_Value
+        MOVX.W  R13, &D_Value + 2
+//  257       OLED_DispFolatAt(FONT_ASCII_6X8,5,0,D_Value,6);
+        PUSHX.W &D_Value + 2
+          CFI CFA SP+10
+        PUSHX.W &D_Value
+          CFI CFA SP+12
+        MOV.B   #0x6, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispFolatAt
+        CALLA   #OLED_DispFolatAt
+//  258       LED_SetStatus(LED1, TRUE);                                        //设置LED状态
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall LED_SetStatus
+        CALLA   #LED_SetStatus
+//  259       LED_SetStatus(LED2, TRUE);                                        //设置LED状态
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+          CFI FunCall LED_SetStatus
+        CALLA   #LED_SetStatus
+        ADDA    #0x8, SP
+          CFI CFA SP+4
+        JMP     ??main_7
+//  260  
+//  261       
+//  262       
+//  263     }
+//  264     else
+//  265     {
+//  266       OLED_DispStringAt(FONT_ASCII_6X8,1,0,"inductance measure");
+??main_15:
+        MOVA    #`?<Constant "inductance measure">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  267       OLED_DispStringAt(FONT_ASCII_6X8,2,0,"L (uH) :");
+        MOVA    #`?<Constant "L (uH) :">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  268       L_Value=1000000*X_Value/2/PI/Fre2;
+        MOVX.W  &X_Value, R12
+        MOVX.W  &X_Value + 2, R13
+        MOV.W   #0x2400, R14
+        MOV.W   #0x4974, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4000, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   #0xfdb, R14
+        MOV.W   #0x4049, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOV.W   #0x2400, R14
+        MOV.W   #0x48f4, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOVX.W  R12, &L_Value
+        MOVX.W  R13, &L_Value + 2
+//  269       if(L_Value<20)
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x41a0, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_18
+//  270       {
+//  271         L_Value=L_Value*1.17;
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0xc28f, R14
+        MOV.W   #0x3f95, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &L_Value
+        MOVX.W  R13, &L_Value + 2
+        JMP     ??main_8
+//  272       }
+//  273       else if(L_Value<20)
+??main_18:
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x41a0, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_19
+//  274       {
+//  275         L_Value=L_Value*1.13;
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0xa3d7, R14
+        MOV.W   #0x3f90, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &L_Value
+        MOVX.W  R13, &L_Value + 2
+        JMP     ??main_8
+//  276         
+//  277       }
+//  278       else if(L_Value<60)
+??main_19:
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0x0, R14
+        MOV.W   #0x4270, R15
+          CFI FunCall ?FLT_LT
+        CALLA   #?FLT_LT
+        JNC     ??main_20
+//  279       {
+//  280         L_Value=L_Value*1.12;
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0x5c29, R14
+        MOV.W   #0x3f8f, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &L_Value
+        MOVX.W  R13, &L_Value + 2
+        JMP     ??main_8
+//  281       }
+//  282       else
+//  283       {
+//  284         L_Value=L_Value*1.05;
+??main_20:
+        MOVX.W  &L_Value, R12
+        MOVX.W  &L_Value + 2, R13
+        MOV.W   #0x6666, R14
+        MOV.W   #0x3f86, R15
+          CFI FunCall _Mul32f
+        CALLA   #_Mul32f
+        MOVX.W  R12, &L_Value
+        MOVX.W  R13, &L_Value + 2
+//  285       }
+//  286       OLED_DispFolatAt(FONT_ASCII_6X8,3,0,L_Value,6);
+??main_8:
+        PUSHX.W &L_Value + 2
+          CFI CFA SP+6
+        PUSHX.W &L_Value
+          CFI CFA SP+8
+        MOV.B   #0x6, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x3, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispFolatAt
+        CALLA   #OLED_DispFolatAt
+//  287       OLED_DispStringAt(FONT_ASCII_6X8,4,0,"Q  :");
+        MOVA    #`?<Constant "Q  :">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  288       Q_Value=X_Value/R_Value;
+        MOVX.W  &X_Value, R12
+        MOVX.W  &X_Value + 2, R13
+        MOVX.W  &R_Value, R14
+        MOVX.W  &R_Value + 2, R15
+          CFI FunCall _Div32f
+        CALLA   #_Div32f
+        MOVX.W  R12, &Q_Value
+        MOVX.W  R13, &Q_Value + 2
+//  289       OLED_DispFolatAt(FONT_ASCII_6X8,5,0,Q_Value,6);
+        PUSHX.W &Q_Value + 2
+          CFI CFA SP+10
+        PUSHX.W &Q_Value
+          CFI CFA SP+12
+        MOV.B   #0x6, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x5, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispFolatAt
+        CALLA   #OLED_DispFolatAt
+//  290       LED_SetStatus(LED1, FALSE);                                        //设置LED状态
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+          CFI FunCall LED_SetStatus
+        CALLA   #LED_SetStatus
+//  291       LED_SetStatus(LED2, FALSE);                                        //设置LED状态 
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+          CFI FunCall LED_SetStatus
+        CALLA   #LED_SetStatus
+        ADDA    #0x8, SP
+          CFI CFA SP+4
+//  292     }
+//  293       
+//  294       OLED_DispStringAt(FONT_ASCII_6X8,7,0,"COMPLETE");
+??main_7:
+        MOVA    #`?<Constant "COMPLETE">`, R15
+        MOV.B   #0x0, R14
+        MOV.B   #0x7, R13
+        MOV.B   #0x0, R12
+          CFI FunCall OLED_DispStringAt
+        CALLA   #OLED_DispStringAt
+//  295       while(flag)
+??main_3:
+        CMPX.W  #0x0, &flag
+        JNE     ??main_3
+//  296       {;}
+//  297       flag=1;
+        MOVX.W  #0x1, &flag
+//  298       count=0;
+        MOVX.W  #0x0, &count
+//  299       buffer_P=0;
+        MOVX.W  #0x0, &buffer_P
+        MOVX.W  #0x0, &buffer_P + 2
+//  300       buffer_V=1000;
+        MOVX.W  #0x0, &buffer_V
+        MOVX.W  #0x447a, &buffer_V + 2
+        BRA     #??main_2
+//  301     }
+//  302     
+//  303     //delay_us(100000);
+//  304     //for(int i=0;i<100;i++)
+//  305     //printf("%d %f %f\n",0,ad1[50]*3.3/1023,ad3[50]*3.3/1023);
+//  306   }
+//  307 }
+          CFI EndBlock cfiBlock2
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for fre>`:
+        DATA32
+        DC32 500000
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for flag_LC>`:
+        DATA16
+        DC16 1
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for flag>`:
+        DATA16
+        DC16 1
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for buffer_V>`:
+        DATA32
+        DC32 447A0000H
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG `CODE`:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "texting...">`:
+        DC8 "texting..."
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "capacitor measure">`:
+        DC8 "capacitor measure"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "C (nF) :">`:
+        DC8 "C (nF) :"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "D  :">`:
+        DC8 "D  :"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "inductance measure">`:
+        DC8 "inductance measure"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "L (uH) :">`:
+        DC8 "L (uH) :"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Q  :">`:
+        DC8 "Q  :"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "COMPLETE">`:
+        DC8 "COMPLETE"
+
+        END
+//  308 
+//  309 
+//  310 
+//  311 
+//  312 
+//  313 
+// 
+// 2 296 bytes in segment CODE
+//    85 bytes in segment DATA20_C
+//    12 bytes in segment DATA20_I
+//    12 bytes in segment DATA20_ID
+//   474 bytes in segment DATA20_Z
+//    12 bytes in segment ISR_CODE
+// 
+// 2 308 bytes of CODE  memory
+//    97 bytes of CONST memory
+//   486 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: 2
