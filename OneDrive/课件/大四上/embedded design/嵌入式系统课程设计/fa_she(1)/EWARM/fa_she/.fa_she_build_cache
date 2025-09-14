@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildDb>
+    <Tool>
+        <Name>linker</Name>
+        <Parent>
+            <Path>D:\files_\stm32f7\sheng_bo_tong_xin\fa_she\EWARM\fa_she\Exe\fa_she.out</Path>
+            <Output>
+                <Path>D:\files_\stm32f7\sheng_bo_tong_xin\fa_she\EWARM\fa_she\List\fa_she.map</Path>
+            </Output>
+        </Parent>
+        <Parent>
+            <Path>D:\文件\stm32f7\sheng_bo_tong_xin\fa_she\EWARM\fa_she\Exe\fa_she.out</Path>
+            <Output>
+                <Path>D:\文件\stm32f7\sheng_bo_tong_xin\fa_she\EWARM\fa_she\List\fa_she.map</Path>
+            </Output>
+        </Parent>
+    </Tool>
+</BuildDb>
